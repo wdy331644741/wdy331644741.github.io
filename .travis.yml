@@ -7,7 +7,7 @@ install:
     - npm install hexo-cli -g
 script:
     - yarn build
-    - hexo d
+    - hexo g
 after_success:
     - cd public/
     - ls

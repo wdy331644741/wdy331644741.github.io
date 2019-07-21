@@ -4,13 +4,16 @@ node_js:
 cache: yarn
 install:
     - yarn
+    - npm install hexo-cli -g
 script:
     - yarn build
+    - hexo d
 after_success:
-    - cd docs/.vuepress/dist
-    - git init
-    - git config --global user.name "${U_NAME}"
-    - git config --global user.email "${U_EMAIL}"
-    - git add -A
-    - git commit -m 'deploy'
-    - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+    - cd public/
+    - ls
+#    - git init
+#    - git config --global user.name "${U_NAME}"
+#    - git config --global user.email "${U_EMAIL}"
+#    - git add -A
+#    - git commit -m 'deploy'
+#    - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}

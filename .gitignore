@@ -4,5 +4,6 @@ db.json
 *.log
 node_modules/
 .deploy*/
+public/
 yarn.lock
 *.swp

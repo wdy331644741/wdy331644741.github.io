@@ -3,13 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
+title: echototo6666
+subtitle:做一些对人类有意义对事情。站在巨人肩膀上，注定也要成为巨人的一部分
 description:
 keywords:
-author: John Doe
+author: Lip
 language:
 timezone:
+
+theme: next
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -50,7 +52,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 5
   order_by: -date
   
 # Category & Tag
@@ -81,3 +83,10 @@ deploy:
   type: git
   repo: git@github.com:wdy331644741/wdy331644741.github.io.git
   branch: master
+
+# 博客搜索功能配置
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

@@ -3,7 +3,7 @@ node_js:
     - 10
 #cache: yarn
 install:
-#    - yarn
+    - yarn
     - npm install hexo-cli -g
 script:
 #    - yarn build

@@ -5,7 +5,7 @@ categories:
 - php
 tags:
 - laravel
-- asd
+- IoC
 #top: true
 ---
 

@@ -1,5 +1,12 @@
 ---
 title: 通过laravel了解DI/IoC
+date: 2018-04-27 23:00:34
+categories:
+- php
+tags:
+- laravel
+- asd
+#top: true
 ---
 
 
@@ -12,7 +19,6 @@ _说白了  DI/ioc 其实是抽象工厂模式的一种升华(超级工厂)。_
 
 
 ## 一、依赖的产生
-
 直接上代码：
 
 ```

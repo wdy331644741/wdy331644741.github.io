@@ -1,5 +1,11 @@
 ---
 title: react connect函数
+date: 2018-04-27 23:00:34
+categories:
+- 前端
+tags:
+- react
+top: true
 ---
 
 > connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])

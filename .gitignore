@@ -7,3 +7,4 @@ node_modules/
 public/
 yarn.lock
 *.swp
+package-lock.json

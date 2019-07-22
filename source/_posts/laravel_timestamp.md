@@ -6,7 +6,7 @@ categories:
 tags:
 - laravel
 #top: true
---
+---
 
 
 > Larval  使用migrate的时候 创建新表：

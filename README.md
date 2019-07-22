@@ -26,6 +26,11 @@ top: true
 > 需要github 添加"Personal access tokens"
 
 
+## Reference
+
+- [主题](https://theme-next.org/docs/theme-settings/)
+- [hexo 文档](https://hexo.io/docs/)
+
 ## License
 
 MIT

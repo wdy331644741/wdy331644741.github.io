@@ -10,6 +10,7 @@ script:
     - hexo g
 after_success:
     - cd public/
+    - echo GH_TOKEN
     - git init
     - git config --global user.name "${U_NAME}"
     - git config --global user.email "${U_EMAIL}"

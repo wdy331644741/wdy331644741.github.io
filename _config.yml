@@ -5,8 +5,8 @@
 # Site
 title: echototo6666
 subtitle: 站在巨人肩膀上，注定也要成为巨人的一部分
-description:
-keywords:
+description: 技术
+keywords: echototo,echototo66
 author: Lip
 language: zh-CN
 timezone:
@@ -15,7 +15,7 @@ theme: next
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://echototo666.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -103,3 +103,13 @@ tag_cloud:
     textHeight: 25
     outlineColor: '#E2E1D1'
     maxSpeed: 0.2
+
+
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+

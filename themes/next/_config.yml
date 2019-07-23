@@ -45,6 +45,17 @@ favicon:
 # Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
 rss:
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   since: 2017
@@ -213,11 +224,11 @@ social_icons:
 # Blog rolls
 links_icon: link
 links_title: Links
-links_layout: block
-#links_layout: inline
+#links_layout: block
+links_layout: inline
 links:
-  csdn: https://www.csdn.net/
-  cnblogs: https://www.cnblogs.com/
+  #csdn: https://www.csdn.net/
+  #cnblogs: https://www.cnblogs.com/
 
 # Sidebar Avatar
 avatar:

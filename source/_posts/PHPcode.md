@@ -57,11 +57,11 @@ Array
 [http://pecl.php.net/package/vld](http://pecl.php.net/package/vld)
 2. 安装
 
-```# wget http://pecl.php.net/get/vld-0.14.0.tgz```
+``` # wget http://pecl.php.net/get/vld-0.14.0.tgz ```
 
-``` # tar zxvf vld-0.14.0.tgz```
+``` # tar zxvf vld-0.14.0.tgz ```
 
-``` root@wdy vld-0.14.0 # phpize```
+``` root@wdy vld-0.14.0 # phpize ```
 
 > Configuring for:
 PHP Api Version:         20131106
@@ -78,7 +78,7 @@ Don't forget to run 'make test'.
 
 > Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-non-zts-20131226/
 
-``` # vi /usr/local/php/etc/php.ini```
+``` # vi /usr/local/php/etc/php.ini ```
 > extension = "vld.so"
 
 [php-config](http://www.php.net/manual/zh/install.pecl.php-config.php)

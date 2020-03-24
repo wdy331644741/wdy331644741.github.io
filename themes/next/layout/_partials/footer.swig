@@ -55,12 +55,14 @@
 #}</div>
 {% endif %}
 
-<div class=BbeiAn-info">
-  {{ __('京ICP备') }} -
-  <a href="http://www.miitbeian.gov.cn/">20007883号</a>
-  </a>
-</div>
 
 {% for inject_item in theme.injects.footer %}
   {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
 {% endfor %}
+
+
+<div class=BbeiAn-info">
+  {{ __('京ICP备') }} -
+  <a href="http://beian.miit.gov.cn/">20007883号</a>
+  </a>
+</div>

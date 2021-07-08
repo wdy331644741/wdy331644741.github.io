@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>排序算法-总结</title>
+    <url>/2018/07/25/allSort/</url>
+    <content><![CDATA[<pre><code>| 算法        | 平均时间复杂度    |  最好情况       |  最坏情况      |  空间复杂度    |  排序方式  |  稳定性  |
+| --------    | -----             | ----            | ----           |   ----         |     ----   |  ----    | 
+| 冒泡排序*   | O($n^2$)          |   O(n)          | O($n^2$)       | O(1)           | in-place   | 稳定     |
+| 选择排序*   | O($n^2$)          |   O($n^2$)      | O($n^2$)       | O(1)           | in-place   | 不稳定   |
+| 插入排序*   | O($n^2$)          |   O(n)          | O($n^2$)       | O(1)           | in-place   | 稳定     |
+| 希尔排序    | O(n log n)        |   O(n log^2 n)  | O(n log^2 n)   | O(1)           | in-place   | 不稳定   |
+| 并轨排序    | O(n log n)        |   O(n log n)    | O(n log n)     | O(n)           | out-place  | 稳定     |
+| 快速排序*   | O($n^2$)          |   O(n)          | O($n^2$)       | O(1)           | in-place   | 稳定     |
+| 堆排序      | O(n log n)        |   O(n log n)    | O(n log n)     | O(1)           | in-place   | 不稳定   |
+| 计数排序    | O(n+k)            |   O(n+k)        | O(n+k)         | O(k)           | out-place  | 稳定     |
+| 桶排序      | O(n+k)            |   O(n+k)        | O($n^2$)       | O(n+k)         | out-place  | 稳定     |
+| 基数排序    | O(n*k)            |   O(n*k)        | O(n*k)         | O(n+k)         | out-place  | 稳定     |
+</code></pre><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；<br>不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；<br>内排序：所有排序操作都在内存中完成；in-place<br>外排序：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；<br>时间复杂度： 一个算法执行所耗费的时间。<br>空间复杂度：运行完一个程序所需内存的大小。</p>
+<p>n: 数据规模<br>k: “桶”的个数</p>
+<h1 id="链接："><a href="#链接：" class="headerlink" title="链接："></a>链接：</h1><ul>
+<li><a href="/2018/07/25/quickSort/" title="排序算法-快速排序">排序算法-快速排序</a>
+</li>
+<li><a href="/2018/07/25/selectSort/" title="排序算法-选择排序">排序算法-选择排序</a>
+</li>
+<li><a href="/2018/07/25/insertSort/" title="排序算法-插入排序">排序算法-插入排序</a>
+</li>
+<li><a href="/2018/07/25/bubbleSort/" title="排序算法-冒泡排序">排序算法-冒泡排序</a>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>react connect函数</title>
+    <url>/2018/04/27/react-connect/</url>
+    <content><![CDATA[<blockquote>
+<p>connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</p>
+</blockquote>
+<p><strong>mapStateToProps</strong>(state, ownProps) : stateProps<br>这个函数允许我们将 store 中的数据作为 props 绑定到组件上<br>第一个参数就是 Redux 的 store</p>
+<p><strong>mapDispatchToProps</strong>(dispatch, ownProps): dispatchProps<br>将 action 作为 props 绑定到组件上</p>
+<p><em>bindActionCreators</em>() ?</p>
+<p><strong>[mergeProps(stateProps, dispatchProps, ownProps): props]</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL3Rhb2Jhb2ZlZC5vcmcvYmxvZy8yMDE2LzA4LzE4L3JlYWN0LXJlZHV4LWNvbm5lY3Qv" title="http://taobaofed.org/blog/2016/08/18/react-redux-connect/">文档翻译<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJlbmVzdHVkaW8uY28vNS13YXlzLXRvLWNvbm5lY3QtcmVkdXgtYWN0aW9ucy0zZjU2YWY0MDA5Yzg=" title="https://blog.benestudio.co/5-ways-to-connect-redux-actions-3f56af4009c8">connect的五种用法<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JlZHV4anMvcmVhY3QtcmVkdXgvYmxvYi9tYXN0ZXIvZG9jcy9hcGkvY29ubmVjdC5tZA==" title="https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md">https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md<i class="fa fa-external-link"></i></span></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(leetcode)整理合并email账户</title>
+    <url>/2021/07/07/leetcode_union_account/</url>
+    <content><![CDATA[<h3 id="题目：按人合并email账户"><a href="#题目：按人合并email账户" class="headerlink" title="题目：按人合并email账户"></a>题目：按人合并email账户</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">accounts = [</span><br><span class="line">    [&quot;John&quot;, &quot;johnsmith@mail.com&quot;, &quot;john00@mail.com&quot;], </span><br><span class="line">    [&quot;John&quot;, &quot;johnnybravo@mail.com&quot;], </span><br><span class="line">    [&quot;John&quot;, &quot;johnsmith@mail.com&quot;, &quot;john_newyork@mail.com&quot;], </span><br><span class="line">    [&quot;Mary&quot;, &quot;mary@mail.com&quot;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Output: [</span><br><span class="line">    [&quot;John&quot;, &apos;john00@mail.com&apos;, &apos;john_newyork@mail.com&apos;, &apos;johnsmith@mail.com&apos;],  </span><br><span class="line">    [&quot;John&quot;, &quot;johnnybravo@mail.com&quot;], </span><br><span class="line">    [&quot;Mary&quot;, &quot;mary@mail.com&quot;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Explanation: </span><br><span class="line">  第一个和第三个 John 是同一个人，因为他们有共同的电子邮件 &quot;johnsmith@mail.com&quot;。 </span><br><span class="line">  第二个 John 和 Mary 是不同的人，因为他们的电子邮件地址没有被其他帐户使用。</span><br><span class="line">  我们可以以任何顺序返回这些列表，例如答案[[&apos;Mary&apos;，&apos;mary@mail.com&apos;]，[&apos;John&apos;，&apos;johnnybravo@mail.com&apos;]，</span><br><span class="line">  [&apos;John&apos;，&apos;john00@mail.com&apos;，&apos;john_newyork@mail.com&apos;，&apos;johnsmith@mail.com&apos;]]仍然会被接受。</span><br></pre></td></tr></table></figure>
+<h3 id="code："><a href="#code：" class="headerlink" title="code："></a>code：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 合并账户问题</span><br><span class="line">     * @param String[][] $accounts</span><br><span class="line">     * @return String[][]</span><br><span class="line">     */</span><br><span class="line">    function accountsMerge($accounts) &#123;</span><br><span class="line">        $init = iterator_to_array($this-&gt;xrange(1111));</span><br><span class="line">        $rank = iterator_to_array($this-&gt;xrange(1111, 0)); //维护一个秩 较小的秩往较大大秩上面合</span><br><span class="line">        $mail2id = [];</span><br><span class="line">        $mail2name = [];</span><br><span class="line"></span><br><span class="line">        $id = 0;</span><br><span class="line">        foreach ($accounts as $item) &#123;</span><br><span class="line"></span><br><span class="line">            for ($i = 1; $i &lt; count($item); $i++) &#123;</span><br><span class="line">                $mail2name[$item[$i]] = $item[0];</span><br><span class="line">                if (!array_key_exists($item[$i], $mail2id)) &#123;</span><br><span class="line">                    $mail2id[$item[$i]] = $id++;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                $this-&gt;union($mail2id[$item[1]], $mail2id[$item[$i]], $init);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        $tmp = [];</span><br><span class="line">        foreach ($mail2name as $k=&gt;$v)&#123;</span><br><span class="line">            // $belong = $init[$mail2id[$k]];</span><br><span class="line">            $belong = $this-&gt;_find($mail2id[$k], $init);</span><br><span class="line">            $tmp[array_search($belong, $mail2id)][] = $k;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        $res = [];</span><br><span class="line">        foreach($tmp as $k=&gt;$v)&#123;</span><br><span class="line">            sort($v);</span><br><span class="line">            array_unshift($v, $mail2name[$k]);</span><br><span class="line">            array_push($res, $v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return $res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function xrange($num, $init = null)</span><br><span class="line">    &#123;</span><br><span class="line">        for ($i = 0; $i &lt; $num; $i++) &#123;</span><br><span class="line">            yield $init ?? $i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    function find($x, &amp;$arr)</span><br><span class="line">    &#123;</span><br><span class="line">        if ($x != $arr[$x]) &#123;</span><br><span class="line">            $arr[$x] = $this-&gt;find($arr[$x], $arr);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return $arr[$x];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    function _find($x, &amp;$arr)</span><br><span class="line">    &#123;</span><br><span class="line">        $son = $x;</span><br><span class="line">        while ($x != $arr[$x]) &#123;</span><br><span class="line">            $x = $arr[$x];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //最短路径</span><br><span class="line">        while ($son != $x) &#123;</span><br><span class="line">            $tmp       = $arr[$son];</span><br><span class="line">            $arr[$son] = $x;</span><br><span class="line">            $son       = $tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return $x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //按秩合并</span><br><span class="line">    function union_rank($a, $b, &amp;$arr, &amp;$rank)</span><br><span class="line">    &#123;</span><br><span class="line">        $_a = $this-&gt;_find($a, $arr);</span><br><span class="line">        $_b = $this-&gt;_find($b, $arr);</span><br><span class="line">        if ($_a !== $_b) &#123;</span><br><span class="line">            $rank[$_a] &lt;= $rank[$_b] &amp;&amp; $arr[$_a] = $_b;</span><br><span class="line">            $rank[$_a] &gt; $rank[$_b] &amp;&amp; $arr[$_b] = $_a;</span><br><span class="line">            $rank[$_a] == $rank[$_b] &amp;&amp; $rank[$b]++;</span><br><span class="line">        &#125;</span><br><span class="line">        return $arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function union($a, $b, &amp;$arr)</span><br><span class="line">    &#123;</span><br><span class="line">        $_a = $this-&gt;_find($a, $arr);</span><br><span class="line">        $_b = $this-&gt;_find($b, $arr);</span><br><span class="line">        if ($_a !== $_b) &#123;</span><br><span class="line">            $arr[$_b] = $_a;//默认把第二个合到第一个子叶子下</span><br><span class="line">        &#125;</span><br><span class="line">        return $arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">accounts = [</span><br><span class="line">    [&quot;John&quot;, &quot;johnsmith@mail.com&quot;, &quot;john00@mail.com&quot;], </span><br><span class="line">    [&quot;John&quot;, &quot;johnnybravo@mail.com&quot;], </span><br><span class="line">    [&quot;John&quot;, &quot;johnsmith@mail.com&quot;, &quot;john_newyork@mail.com&quot;], </span><br><span class="line">    [&quot;Mary&quot;, &quot;mary@mail.com&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h5 id="利用并查集结构"><a href="#利用并查集结构" class="headerlink" title="利用并查集结构"></a>利用并查集结构</h5><blockquote>
+<p>每个email对应一个id</p>
+</blockquote>
+<ol start="0">
+<li><span class="exturl" data-url="bWFpbHRvOmpvaG5zbWl0aEBtYWlsLmNvbQ==" title="mailto:johnsmith@mail.com">johnsmith@mail.com<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="bWFpbHRvOmpvaG4wMEBtYWlsLmNvbQ==" title="mailto:john00@mail.com">john00@mail.com<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="bWFpbHRvOmpvaG5ueWJyYXZvQG1haWwuY29t" title="mailto:johnnybravo@mail.com">johnnybravo@mail.com<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="bWFpbHRvOmpvaG5fbmV3eW9ya0BtYWlsLmNvbQ==" title="mailto:john_newyork@mail.com">john_newyork@mail.com<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="bWFpbHRvOm1hcnlAbWFpbC5jb20=" title="mailto:mary@mail.com">mary@mail.com<i class="fa fa-external-link"></i></span></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">0--&gt;0</span><br><span class="line">1--&gt;1</span><br><span class="line">2--&gt;2</span><br><span class="line">3--&gt;3</span><br><span class="line">4--&gt;4</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>union(0,1)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">0--&gt;0</span><br><span class="line">1--&gt;0</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>union(0,3)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">0--&gt;0</span><br><span class="line">1--&gt;0</span><br><span class="line">2--&gt;2</span><br><span class="line">3--&gt;0</span><br><span class="line">4--&gt;4</span><br></pre></td></tr></table></figure>
+<p>最终图结构 如上图</p>
+<p>解：查找图的连接快</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux制作开机启动盘</title>
+    <url>/2019/12/07/linux_dd_ios/</url>
+    <content><![CDATA[<ol>
+<li>格式化u盘</li>
+<li>推出u盘</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil unmountDisk /dev/disk2</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>dd刻录(过程可能会有点慢)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dd if=./ubuntu-***.iso of=/dev/disk2 bs=1m;sync</span><br></pre></td></tr></table></figure>
+<p><img src="/img/ubuntu-14.04.6-desktop-amd64.iso.png"></p>
+<blockquote>
+<p>在macOs中 把iso文件先转换成 dmg文件，听说会刻录会更快<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9hYjZmNDk0MjgyY2Q=" title="https://www.jianshu.com/p/ab6f494282cd">https://www.jianshu.com/p/ab6f494282cd<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux开通ssh通道</title>
+    <url>/2019/07/27/ssh_port/</url>
+    <content><![CDATA[<blockquote>
+<p>临时 紧急接到一个运营需求，要求统计一个活动的参与情况。按理说该需求本来是应该由公司BI部门负责的。但是BI的数据库和线上的数据库数据同步有时差，说最快2个小时、最迟1个自然日。而且2个小时还不能完全保证数据的完整性。运营人员接受不了，说要实时的。因为该活动是秒杀活动，称自己需要根据实时情况调整活动资源、奖品的配置。</p>
+</blockquote>
+<p>最后讨论无果、说只能麻烦让我在活动期间内每天中午12点整  手动整理线上数据，然后抄送邮件。</p>
+<p>¥%……&amp;* 我肯定不能每天大中午的给他整理这个去啊么，再说活动持续一个多月呢。</p>
+<p>最后想个办法。既然我navcat软件能通过只读账号+跳板机链接到mysql。我程序也肯定能啊</p>
+<p>google。。。。</p>
+<p>大概搜到两种方法</p>
+<ol>
+<li>Php有ssh相关的函数</li>
+<li>在shell中增加一条ssh通道</li>
+</ol>
+<p>我的想法是在测试服务器上添加一个定时计划。然后写一个php脚本。每天12点执行这个计划<br>抱着试试的态度  选了第二种方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">#杀死</span><br><span class="line">kill -9 $(ps -aux|grep -E 3308|grep -v grep|awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line"></span><br><span class="line">## 本地打开3308端口通过ssh管道连接到阿里rds:3306数据库(前提是私钥公钥 配置好)</span><br><span class="line">ssh -fN -L3308:rdsu43ck*****:3306 -p22 develop@182.92.*.*</span><br><span class="line"></span><br><span class="line">PID=$(ps -aux|grep -E 3308|grep -v grep|awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line"></span><br><span class="line">cd ~/wanglibao/api</span><br><span class="line">#发送邮件+统计数据脚本</span><br><span class="line">php artisan SendMail</span><br><span class="line"></span><br><span class="line">#关闭通道</span><br><span class="line">kill -9 $PID</span><br><span class="line">if [ $? -eq 0 ];then</span><br><span class="line">    echo &quot;kill PID: $PID success&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;kill PID:$PID fail&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>定时计划</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*/5 * * * * sh /root/sendmail.sh &gt;&gt;/tmp/sendmail.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell多进程控制</title>
+    <url>/2019/07/27/shell_fifo/</url>
+    <content><![CDATA[<blockquote>
+<p>试想平时我们需要使用shell多进程搞一些事情。如果是小事情还好，如果是大事情的话，我们for循环启动多个进程在后台运行。假设for循环很大 启动了几千个进程。我们的机器能支撑的住吗？</p>
+</blockquote>
+<h2 id="FIFO管道"><a href="#FIFO管道" class="headerlink" title="FIFO管道"></a>FIFO管道</h2><p>它是一种文件类型，在文件系统中可以看到。FIFO中可以很好地解决在无关进程间数据交换的要求，并且由于它们是存在于文件系统中的，这也提供了一种比匿名管道更持久稳定的通信办法。</p>
+<blockquote>
+<p>$mkfifo [option] name…</p>
+</blockquote>
+<p>以下例来讲。我们把父shell进程PID绑定一个fifo管道，然后设定最大并发进程数3 。大概原理就是写入到fifo文件三个空行。然后后面我们不关心for循环中要启动多少个子进程，子进程运行完后会减去fifo文件中一条空行。达到一个<strong>窗口限流</strong>的效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">trap &apos;exec 6&gt;&amp;-; exec 6&lt;&amp;-; exit 0;&apos; INT</span><br><span class="line"></span><br><span class="line">#for ((i=1;i&lt;=10;i++));</span><br><span class="line">#do</span><br><span class="line">#</span><br><span class="line">#echo &apos;\n&apos;</span><br><span class="line">#done</span><br><span class="line"></span><br><span class="line">##网站域名</span><br><span class="line">site=&apos;www.echototo666.com&apos;</span><br><span class="line"></span><br><span class="line">#首页</span><br><span class="line">url_by_page=( $(curl -s $&#123;site&#125; |grep post-title-link |awk  &apos;&#123; print substr($2,6)&#125;&apos;|  sed  &apos;s/&quot;//g&apos;) )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#如果有其他页</span><br><span class="line">##接受页面变量</span><br><span class="line">if [ $# -gt 0 ];then</span><br><span class="line">have_page=$1</span><br><span class="line"></span><br><span class="line">for((i=2;i&lt;=$have_page;i++));</span><br><span class="line">do</span><br><span class="line">url=$site&quot;/page/&quot;$i&quot;/&quot;</span><br><span class="line">get_page=($(curl -s $&#123;url&#125; |grep post-title-link |awk  &apos;&#123; print substr($2,6)&#125;&apos;|  sed  &apos;s/&quot;//g&apos;) )</span><br><span class="line">url_by_page+=$&#123;get_page[@]&#125;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#至此获取到所有到页面url</span><br><span class="line">echo $&#123;url_by_page[@]&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function flash()&#123;</span><br><span class="line">    ##传递的url参数</span><br><span class="line">    _url=$1</span><br><span class="line">    ref=&quot;Referer:http://$site$_url&quot;</span><br><span class="line">    i=0</span><br><span class="line">    tmp_arr=($&#123;uri//\// &#125;)</span><br><span class="line">    bar=$&#123;tmp_arr[3]&#125;&apos;:&apos;</span><br><span class="line">    while [ $i -le 100 ]</span><br><span class="line">    do</span><br><span class="line"></span><br><span class="line">        printf &quot;[%-100s][%d%%]\r&quot; &quot;$bar&quot; &quot;$i&quot;</span><br><span class="line"></span><br><span class="line">    let i++</span><br><span class="line">    ## 带上cookie时网站uv不变，只刷pv</span><br><span class="line">    curl -s \</span><br><span class="line">    -H $ref \</span><br><span class="line">    -A &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&quot; \</span><br><span class="line">    --cookie &quot;busuanziId=C2B688C12EE64A93BE945853A895C3FA&quot; \</span><br><span class="line">    &apos;http://busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback_813017575528&apos; &gt; /dev/null</span><br><span class="line"></span><br><span class="line">        bar+=&apos;#&apos;</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">##其中$$为该进程的pid</span><br><span class="line">tmp_fifofile=&quot;/tmp/$$.fifo&quot;</span><br><span class="line">##创建命名管道</span><br><span class="line">mkfifo $tmp_fifofile</span><br><span class="line">##把文件描述符6和FIFO进行绑定</span><br><span class="line">exec 6&lt;&gt;$tmp_fifofile</span><br><span class="line">##绑定后，该文件就可以删除了</span><br><span class="line">rm -f $tmp_fifofile</span><br><span class="line"></span><br><span class="line">##并发量为3，用这个数字来控制并发数</span><br><span class="line">thread=13</span><br><span class="line">for ((i=0;i&lt;$thread;i++));</span><br><span class="line">do</span><br><span class="line">    ##写一个空行到管道里，因为管道文件的读取以行为单位</span><br><span class="line">    echo &gt;&amp;6</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for uri in $&#123;url_by_page[@]&#125;</span><br><span class="line">do</span><br><span class="line">##读取管道中的一行,每次读取后，管道都会少一行</span><br><span class="line">read -u6</span><br><span class="line">&#123;</span><br><span class="line">#tmp_arr=($&#123;uri//\// &#125;)</span><br><span class="line"></span><br><span class="line">#flash $uri &gt; ~/$&#123;tmp_arr[3]&#125;.log</span><br><span class="line">flash $uri || &#123;echo &quot;task is failed&quot;&#125;</span><br><span class="line">##每次执行完flash函数后，再增加一个空行，这样下面的进程才可以继续执行</span><br><span class="line">echo &gt;&amp;6</span><br><span class="line">&#125; &amp;</span><br><span class="line">done</span><br><span class="line">#tail -f file1 file2 | awk &apos;/^==&gt; / &#123;a=substr($0, 5, length-8); next&#125;  &#123;print a&quot;:&quot;$0&#125;&apos;</span><br><span class="line"></span><br><span class="line">wait</span><br><span class="line"></span><br><span class="line">##关闭文件描述符6的写</span><br><span class="line">exec 6&gt;&amp;-</span><br><span class="line">echo &quot;\n alldone&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="ps-最后遗留有一个问题，就是上面那个脚本是去刷页面访问量的flsah方法中又一个进度条。然后在命令行中运行父进程的时候，不同子进程中的进度条会有一个输出覆盖的bug"><a href="#ps-最后遗留有一个问题，就是上面那个脚本是去刷页面访问量的flsah方法中又一个进度条。然后在命令行中运行父进程的时候，不同子进程中的进度条会有一个输出覆盖的bug" class="headerlink" title="ps:最后遗留有一个问题，就是上面那个脚本是去刷页面访问量的flsah方法中又一个进度条。然后在命令行中运行父进程的时候，不同子进程中的进度条会有一个输出覆盖的bug"></a>ps:最后遗留有一个问题，就是上面那个脚本是去刷页面访问量的flsah方法中又一个进度条。然后在命令行中运行父进程的时候，不同子进程中的进度条会有一个输出覆盖的bug</h3>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式六大原则</title>
+    <url>/2019/07/27/shejimoshi6/</url>
+    <content><![CDATA[<p>设计模式六大原则<br>（solid ‘稳定的’  记忆首字母）</p>
+<h2 id="单一原则"><a href="#单一原则" class="headerlink" title="单一原则"></a>单一原则</h2><p><strong>Single Responsibility Principle</strong></p>
+<blockquote>
+<p>一个类只负责一项职责，尽量做到类的只有一个行为原因引起变化；<br>a、业务对象（BO business object）、业务逻辑（BL business logic）拆分；</p>
+</blockquote>
+<h2 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h2><p><strong>LSP liskov substitution principle</strong></p>
+<blockquote>
+<p>子类可以扩展父类的功能，但不能改变原有父类的功能；<br>（目的：增强程序的健壮性）实际项目中，每个子类对应不同的业务含义，使父类作为参数，传递不同的子类完成不同的业务逻辑。</p>
+</blockquote>
+<h2 id="依赖倒置原则"><a href="#依赖倒置原则" class="headerlink" title="依赖倒置原则"></a>依赖倒置原则</h2><p><strong>dependence inversion principle</strong></p>
+<blockquote>
+<p>面向接口编程；（通过接口作为参数实现应用场景）<br>抽象就是接口或者抽象类，细节就是实现类<br>含义：<br>　　上层模块不应该依赖下层模块，两者应依赖其抽象；<br>　　抽象不应该依赖细节，细节应该依赖抽象；<br>【接口负责定义public属性和方法，并且申明与其他对象依赖关系，抽象类负责公共构造部分的实现，实现类准确的实现业务逻辑】</p>
+</blockquote>
+<h2 id="接口隔离"><a href="#接口隔离" class="headerlink" title="接口隔离"></a>接口隔离</h2><p><strong>interface segregation principle</strong></p>
+<blockquote>
+<p>建立单一接口；（扩展为类也是一种接口，一切皆接口）<br>定义：<br>　　a.客户端不应该依赖它不需要的接口；<br>　　b.类之间依赖关系应该建立在最小的接口上；<br>【接口的设计粒度越小，系统越灵活，但是灵活的同时结构复杂性提高，开发难度也会变大，维护性降低】　　　</p>
+</blockquote>
+<h2 id="迪米特原则"><a href="#迪米特原则" class="headerlink" title="迪米特原则"></a>迪米特原则</h2><p><strong>law of demeter LOD</strong></p>
+<blockquote>
+<p>最少知道原则，尽量降低类与类之间的耦合；<br>一个对象应该对其他对象有最少的了解</p>
+</blockquote>
+<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><p><strong>open closed principle</strong></p>
+<blockquote>
+<p>用抽象构建架构，用实现扩展原则；</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Navcat导出数据为csv乱码问题（iconv）</title>
+    <url>/2019/05/27/shell_iconv/</url>
+    <content><![CDATA[<p>这是因为navcat导出csv文件的编码格式是gbk，而我们用的excel是urf8。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ iconv -s -c -f UTF8 -t GBK &quot;vs活动.csv&quot; &gt; ./iconv.utf8.gbk.tmp</span><br><span class="line">$ mv iconv.utf8.gbk.tmp &quot;11111.csv&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>并发锁</title>
+    <url>/2019/05/17/php_lock/</url>
+    <content><![CDATA[<p>####问题描述<br>在工作项目中，会遇到一些php并发访问去修改一个数据问题，如果这个数据不加锁，就会造成数据的错误。</p>
+<h2 id="1-举例说明"><a href="#1-举例说明" class="headerlink" title="1. 举例说明"></a>1. 举例说明</h2><blockquote>
+<p>如果有两个操作人(p和m)，都用用户编号100账户,分别在pc和手机端同时登陆，100账户总余额有1000，p操作人花200，m操作人花300。并发过程如下。<br>p操作人：<br>     1 取出用户的余额1000。<br>     2 支付后剩余 800 = 1000 - 200。<br>     3 更新后账户余额800。<br>m操作人：<br>       1 取出用户余额1000。<br>       2 支付后剩余700 = 1000 - 300。<br>       3 支付后账户余额700。<br>两次支付后，账户的余额居然还有700，应该的情况是花费了500，账户余额500才对。造成这个现象的根本原因，是并发的时候，p和m同时操作取到的余额数据都是1000。</p>
+</blockquote>
+<h2 id="2-加锁设计"><a href="#2-加锁设计" class="headerlink" title="2.加锁设计"></a>2.加锁设计</h2><p>锁的操作一般只有两步，一 获取锁(getLock)；二是释放锁(releaseLock)。但现实锁的方式有很多种，可以是文件方式实现；sql实现；redis实现；</p>
+<h2 id="3-code"><a href="#3-code" class="headerlink" title="3.code"></a>3.code</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace Lib;</span><br><span class="line">class LockSys</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	//const LOCK_TYPE_DB = &apos;SQLLock&apos;;  </span><br><span class="line">    const LOCK_TYPE_FILE = &apos;\Lib\FileLock&apos;;</span><br><span class="line">    const LOCK_TYPE_REDIS = &apos;\Lib\RedisLock&apos;;</span><br><span class="line"></span><br><span class="line">	private $_lock = null;  </span><br><span class="line">    private static $_supportLocks = array(&apos;FileLock&apos;, &apos;SQLLock&apos;, &apos;RedisLock&apos;); </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public function __construct($type, $options = array())   </span><br><span class="line">    &#123;  </span><br><span class="line">        if(false == empty($type))</span><br><span class="line">        &#123;</span><br><span class="line">            $this-&gt;createLock($type, $options);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function createLock($type, $options=array())</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;_lock = new $type();//实例化 锁</span><br><span class="line">        // $this-&gt;_lock = new RedisLock();//实例化 锁</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function getLock($key, $timeout = ILock::EXPIRE)</span><br><span class="line">    &#123;  </span><br><span class="line">        if (false == $this-&gt;_lock instanceof ILock)</span><br><span class="line">        &#123;</span><br><span class="line">            throw new Exception(&apos;false == $this-&gt;_lock instanceof ILock&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $this-&gt;_lock-&gt;getLock($key, $timeout);</span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    public function releaseLock($key)  </span><br><span class="line">    &#123;  </span><br><span class="line">        if (false == $this-&gt;_lock instanceof ILock)</span><br><span class="line">        &#123;</span><br><span class="line">            throw new Exception(&apos;false == $this-&gt;_lock instanceof ILock&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $this-&gt;_lock-&gt;releaseLock($key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">interface ILock</span><br><span class="line">&#123;  </span><br><span class="line">    const EXPIRE = 5;</span><br><span class="line">    public function getLock($key, $timeout=self::EXPIRE);</span><br><span class="line">    public function releaseLock($key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//redis 锁</span><br><span class="line">class RedisLock implements ILock</span><br><span class="line">&#123;  </span><br><span class="line">    public function __construct()  </span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;redis = getReidsInstance();</span><br><span class="line">        // $this-&gt;memcache = new Memcache();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public function getLock($key, $timeout=self::EXPIRE)</span><br><span class="line">    &#123;       </span><br><span class="line">        $waitime = 20000;  </span><br><span class="line">        $totalWaitime = 0;  </span><br><span class="line">        $time = $timeout*1000000;</span><br><span class="line">        // while ($totalWaitime &lt; $time &amp;&amp; false == $this-&gt;memcache-&gt;add($key, 1, $timeout))</span><br><span class="line">        while ($totalWaitime &lt; $time &amp;&amp; false == $this-&gt;redis-&gt;set($key, 1, array(&apos;nx&apos;,&apos;ex&apos;=&gt; $timeout) ))   </span><br><span class="line">        &#123;  </span><br><span class="line">            usleep($waitime);  </span><br><span class="line">            $totalWaitime += $waitime;  </span><br><span class="line">        &#125;  </span><br><span class="line">        if ($totalWaitime &gt;= $time)  </span><br><span class="line">            throw new Exception(&apos;can not get lock for waiting &apos;.$timeout.&apos;s.&apos;);  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public function releaseLock($key)  </span><br><span class="line">    &#123;  </span><br><span class="line">        $this-&gt;redis-&gt;delete($key);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//文件锁</span><br><span class="line">class FileLock implements ILock</span><br><span class="line">&#123;  </span><br><span class="line">    private $_fp;  </span><br><span class="line">    private $_single;  </span><br><span class="line">  </span><br><span class="line">    public function __construct($options)  </span><br><span class="line">    &#123;  </span><br><span class="line">        if (isset($options[&apos;path&apos;]) &amp;&amp; is_dir($options[&apos;path&apos;]))  </span><br><span class="line">        &#123;  </span><br><span class="line">            $this-&gt;_lockPath = $options[&apos;path&apos;].&apos;/&apos;;  </span><br><span class="line">        &#125;  </span><br><span class="line">        else  </span><br><span class="line">        &#123;  </span><br><span class="line">            $this-&gt;_lockPath = &apos;/tmp/&apos;;  </span><br><span class="line">        &#125;  </span><br><span class="line">         </span><br><span class="line">        $this-&gt;_single = isset($options[&apos;single&apos;])?$options[&apos;single&apos;]:false;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public function getLock($key, $timeout=self::EXPIRE)  </span><br><span class="line">    &#123;  </span><br><span class="line">        $startTime = Timer::getTimeStamp();  </span><br><span class="line">  </span><br><span class="line">        $file = md5(__FILE__.$key);  </span><br><span class="line">        $this-&gt;fp = fopen($this-&gt;_lockPath.$file.&apos;.lock&apos;, &quot;w+&quot;);  </span><br><span class="line">        if (true || $this-&gt;_single)  </span><br><span class="line">        &#123;  </span><br><span class="line">            $op = LOCK_EX + LOCK_NB;  </span><br><span class="line">        &#125;  </span><br><span class="line">        else  </span><br><span class="line">        &#123;  </span><br><span class="line">            $op = LOCK_EX;  </span><br><span class="line">        &#125;  </span><br><span class="line">        if (false == flock($this-&gt;fp, $op, $a))  </span><br><span class="line">        &#123;  </span><br><span class="line">            throw new Exception(&apos;failed&apos;);  </span><br><span class="line">        &#125;  </span><br><span class="line">         </span><br><span class="line">        return true;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public function releaseLock($key)  </span><br><span class="line">    &#123;  </span><br><span class="line">        flock($this-&gt;fp, LOCK_UN);  </span><br><span class="line">        fclose($this-&gt;fp);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-应用锁"><a href="#4-应用锁" class="headerlink" title="4.应用锁"></a>4.应用锁</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//单笔充值大于1w  或者 累计本金大于2w</span><br><span class="line">//单笔充值 小于1w 发放一张0.5阶梯加息劵 7天</span><br><span class="line">//发放1%加息 结束时间=阶梯加息活动结束时间</span><br><span class="line"></span><br><span class="line">//开启redis锁</span><br><span class="line">$lockSystem = new \Lib\LockSys(LockSys::LOCK_TYPE_REDIS);</span><br><span class="line">$lockKey = &quot;ladder.&quot;.$userId;</span><br><span class="line">$lockSystem-&gt;getLock($lockKey,3);//redis单机锁  延迟8秒</span><br><span class="line"></span><br><span class="line">#code......</span><br><span class="line">$lockSystem-&gt;releaseLock($lockKey);</span><br></pre></td></tr></table></figure>
+<h2 id="5-锁分析"><a href="#5-锁分析" class="headerlink" title="5.锁分析"></a>5.锁分析</h2><p>当多个程序进程过来时（微秒级），对同一资源读取时，立马加上一个锁，然后紧接着的进程会获取到该锁（每0.02s 轮训一次）</p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>api接口故障解决办法</title>
+    <url>/2019/04/27/api_err/</url>
+    <content><![CDATA[<h1 id="服务降级、熔断、限流、排队"><a href="#服务降级、熔断、限流、排队" class="headerlink" title="服务降级、熔断、限流、排队"></a>服务降级、熔断、限流、排队</h1><p>接口级故障：系统没有宕机、网络没有中断，但是业务却出现了问题：业务响应慢、大量访问超时、大量访问异常。</p>
+<p>本质：系统负载过高，导致无法快速处理业务。比如，如果系统中存在慢查询，当负载过高时，慢查询会将数据库资源耗尽，导致读写操作超时，业务读写很容易出现超时现象。即使没有慢查询当负载过高时也会出现超时情况。</p>
+<p>产生原因的内部条件：程序bug导致死循环、存在慢查询、程序逻辑不对导致耗尽内存</p>
+<p>外部条件：黑客攻击、促销、第三方系统响应缓慢</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><blockquote>
+<p>解决接口级故障的核心思想是优先保障核心业务和优先保障绝大部分用户。比如登录功能很重要，当访问量过高时，停掉注册功能，为登录腾出资源。</p>
+</blockquote>
+<h2 id="解决策略"><a href="#解决策略" class="headerlink" title="解决策略"></a>解决策略</h2><h3 id="降级"><a href="#降级" class="headerlink" title="降级"></a>降级</h3><blockquote>
+<p>系统将某些不重要的业务或接口的功能降低，可以只提供部分功能，也可以完全停到所有所有不重要的功能。降级的思想是丢车保帅。</p>
+</blockquote>
+<p>常见降级方式</p>
+<ul>
+<li><p>系统后门降级：系统预留后门用于降级，比如提供一个降级URL，访问URL时就执行降级指令。缺点：如果服务器数量多，需要一台一台去操作，效率低。</p>
+</li>
+<li><p>独立系统降级：将降级操作独立到一个单独的系统中，可以实现复杂的权限管理、批量操作等功能。</p>
+</li>
+</ul>
+<h3 id="熔断"><a href="#熔断" class="headerlink" title="熔断"></a>熔断</h3><blockquote>
+<p>降级是应对系统自身的故障，而熔断的目的是应对外部系统的故障。比如A服务的X功能依赖B服务的某个接口，当B服务接口响应很慢时，A服务X功能的响应也会被拖慢，进一步导致了A服务的线程都卡在了X功能上，A服务的其它功能也会卡主或拖慢。此时就需要熔断机制，即A服务不在请求B这个接口，A服务内部发现B接口就直接返回错误，从而避免整个A服务被拖慢。</p>
+</blockquote>
+<ul>
+<li>实现思路：需要系统有一个统一的API调用层，由API来进行采样或者统计。</li>
+</ul>
+<h3 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h3><blockquote>
+<p>限流：只允许系统能够承受的访问量进来，超出的会被丢弃。</p>
+</blockquote>
+<p>降级从系统功能优先级角度考虑如何应对故障，而限流则从用户访问压力的角度来考虑如何应对故障。<br>常见限流方式</p>
+<ol>
+<li>基于请求限流：指从外部请求的角度考虑限流。常见的方式有：</li>
+</ol>
+<ul>
+<li>限制总量：限制某个指标的累积上限。比如直播间的用户总数上限为100万，超过后用户无法进入。抢购商品数量为100，限制抢购用户上限为1万个，超过或直接拒绝。</li>
+<li>限制时间量：限制一段时间内某个指标的上限。例如：一分钟内只允许1000个用户访问。每秒请求峰值为10万。</li>
+<li>都需要找到合适的阀值：需要通过性能压测来确定阀值或者逐步优化。</li>
+</ul>
+<ol start="2">
+<li>基于资源限流：指从系统内部考虑，找到影响性能的关键资源，对其使用上限限制。常见的内部资源有：连接数、文件句柄、线程数、请求队列、CPU利用率等。例如，使用Netty实现服务器，每个请求先放到请求队列中，业务线程从请求队列中获取任务进行处理，请求队列大小为1000，那么超过该值则直接拒绝。 <h3 id="排队"><a href="#排队" class="headerlink" title="排队"></a>排队</h3></li>
+</ol>
+<blockquote>
+<p>排队方式来应对接口级故障的方式是：让用户等待一段时间，而不是像限流方式直接拒绝用户。从体验上来讲，虽然用户没有很快得到拒绝响应，但是如果等待时间过长，体验也不是很好。(但是对于一些请求，等待比直接拒绝要好，比如支付请求，排队总比直接拒绝好，因为直接拒绝用户就有可能不买了）</p>
+</blockquote>
+<ul>
+<li><p>实现方式：排队需要保存未被处理的请求，所以排队需要缓存大量数据，一般单个系统无法缓存这么多数据，所有需要单独的排队系统去实现。例如使用Kafka、RocketMQ等消息队列来缓存用户的请求。</p>
+</li>
+<li><p>实现思路：蓝色区域是排队系统</p>
+</li>
+</ul>
+<p><img src="/img/Pasted1.png"></p>
+<p>【排队模块】<br>负责将用户的请求以FIFO的方式存入队列中，不同商品的秒杀请求放在不同的队列中，队列大小可以根据秒杀商品数量自行定义。<br>【调度模块】<br>负责动态调度排队模块中的请求到服务模块中。动态性体现在：会根据服务模块的当前处理能力控制拉取请求速度，如果服务模块的处理能力有空闲就提升拉取请求速度，否则降慢速度。<br>【服务模块】<br>负责调用真正的业务来处理请求，并获取返回结果，再调用排队模块的接口写回业务处理结果。</p>
+<p>转载：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8zM2YzOTRjMGVlMmQ=" title="https://www.jianshu.com/p/33f394c0ee2d">https://www.jianshu.com/p/33f394c0ee2d<i class="fa fa-external-link"></i></span></p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法-插入排序</title>
+    <url>/2018/07/25/insertSort/</url>
+    <content><![CDATA[<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><ol>
+<li>从第一个元素开始，该元素可以认为已经被排序</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置后</li>
+<li>重复步骤2~5</li>
+</ol>
+<h1 id="动画演示"><a href="#动画演示" class="headerlink" title="动画演示"></a>动画演示</h1><p><img src="/img/insertSort.gif"></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function StraightInsertionSort($arr)&#123;</span><br><span class="line">    // 数组第一个元素默认已被排序</span><br><span class="line">    for ($i = 1; $i &lt; count($arr); $i++) &#123;// 未排序序列从数组第二个元素开始</span><br><span class="line">        $get = $arr[$i];// 获取未排列序列第一个元素为要比较的元素</span><br><span class="line">        // 指针指向已排序序列最后一个元素</span><br><span class="line">        $j = $i - 1;</span><br><span class="line">        while ($j &gt;= 0 &amp;&amp; $arr[$j] &gt; $get) &#123;// 当指针指向的元素比要比较的元素大</span><br><span class="line">            $arr[$j + 1] = $arr[$j];    // 则将指针指向的元素向后移动一位</span><br><span class="line">            $j--;// 指针前移</span><br><span class="line">        &#125;</span><br><span class="line">        // 直到指针指向的元素与要比较元素小或者相等，则要比较元素插入到指针指向元素后</span><br><span class="line">        $arr[$j + 1] = $get;</span><br><span class="line">    &#125;</span><br><span class="line">    return $arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法-快速排序</title>
+    <url>/2018/07/25/quickSort/</url>
+    <content><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>百度快速排序算法的时候 网上有这种php写法</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQkYlQUIlRTklODAlOUYlRTYlOEUlOTIlRTUlQkElOEYlRTclQUUlOTclRTYlQjMlOTUvMzY5ODQyP2Zyb210aXRsZT0lRTUlQkYlQUIlRTklODAlOUYlRTYlOEUlOTIlRTUlQkElOEYmYW1wO2Zyb21pZD0yMDg0MzQ0JmFtcDtmcj1hbGFkZGluIzNfMTM=" title="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/369842?fromtitle=%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F&amp;fromid=2084344&amp;fr=aladdin#3_13">baidu-快速排序<i class="fa fa-external-link"></i></span></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><blockquote>
+<p>快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+</blockquote>
+<h1 id="动画演示"><a href="#动画演示" class="headerlink" title="动画演示"></a>动画演示</h1><p><img src="/img/quickS.gif"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function quick_sort($arr)</span><br><span class="line">&#123;</span><br><span class="line">    // 判断是否需要继续</span><br><span class="line">    if (count($arr) &lt;= 1) &#123;</span><br><span class="line">        return $arr;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    $middle = $arr[0]; // 中间值</span><br><span class="line"> </span><br><span class="line">    $left = array(); // 小于中间值</span><br><span class="line">    $right = array();// 大于中间值</span><br><span class="line"> </span><br><span class="line">    // 循环比较</span><br><span class="line">    for ($i=1; $i &lt; count($arr); $i++) &#123; </span><br><span class="line">        if ($middle &lt; $arr[$i]) &#123;</span><br><span class="line">            // 大于中间值</span><br><span class="line">            $right[] = $arr[$i];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line"> </span><br><span class="line">            // 小于中间值</span><br><span class="line">            $left[] = $arr[$i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    // 递归排序两边</span><br><span class="line">    $left = quick_sort($left);</span><br><span class="line">    $right = quick_sort($right);</span><br><span class="line"> </span><br><span class="line">    // 合并排序后的数据，别忘了合并中间值</span><br><span class="line">    return array_merge($left, array($middle), $right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有网友说了这种虽然符合快速排序的思想。但是开辟了新的变量空间</p>
+<blockquote>
+<p>$left = array(); // 小于中间值<br>$right = array();// 大于中间值</p>
+</blockquote>
+<h1 id="按照动画写了一段code"><a href="#按照动画写了一段code" class="headerlink" title="按照动画写了一段code"></a>按照动画写了一段code</h1><p>然后结合其他大神的算法 自己写了一个。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function quick(&amp;$arr,$start,$end)&#123;</span><br><span class="line"></span><br><span class="line">    $x = (int)$start;//xy 单进程递归时用于区分 上一层快排拆分出来的位置</span><br><span class="line">    $y = (int)$end;//用于最后两行的递归调用</span><br><span class="line">    if($x &gt;= $y)&#123;</span><br><span class="line">        return;//递归到的最小单位（或者说是两相邻的元素）</span><br><span class="line">    &#125;</span><br><span class="line">    $pivot = $arr[$end]; //以最后一个元素作为基准，划分数组</span><br><span class="line">    //从开始找到第一个大于基准的元素  和  从尾部找到的小于基准的元素   并交换位置Swap</span><br><span class="line">    while ($start &lt; $end)&#123;</span><br><span class="line">        //从前寻找 找到第一个大于基准的元素</span><br><span class="line">        while ($start &lt; $end)&#123;</span><br><span class="line">            if($arr[$start] &lt; $pivot)&#123;</span><br><span class="line">                $start++;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //从后寻找 第一个小于基准的元素</span><br><span class="line">        while ($start &lt; $end )&#123;</span><br><span class="line">            if($arr[--$end] &gt; $pivot)&#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if($start == $end)&#123;</span><br><span class="line">            //完成划分 后把基准和放到小于基准的那一部分的结尾</span><br><span class="line">            Swap($arr, $start, $y);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Swap($arr, $start, $end);//交换 这两个元素的位置</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    quick($arr,$x ,$start -1);</span><br><span class="line">    quick($arr,$start+1,$y);//两部分 再递归处理</span><br><span class="line">    return $arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><p>另外附大神代码：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MDQ1OTQ2L2FydGljbGUvZGV0YWlscy84MDc1MTgzMSM2LiVFNSVCRiVBQiVFOSU4MCU5RiVFNiU4RSU5MiVFNSVCQSU4RihRdWlja1NvcnQ=" title="https://blog.csdn.net/qq_36045946/article/details/80751831#6.%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F(QuickSort">https://blog.csdn.net/qq_36045946/article/details/80751831#6.%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F(QuickSort)<i class="fa fa-external-link"></i></span>)</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法-选择排序</title>
+    <url>/2018/07/25/selectSort/</url>
+    <content><![CDATA[<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><blockquote>
+<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。</p>
+</blockquote>
+<h1 id="动画演示"><a href="#动画演示" class="headerlink" title="动画演示"></a>动画演示</h1><p><img src="/img/selectS.gif"></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function SelectionSort($arr)</span><br><span class="line">&#123;</span><br><span class="line">    $length = count($arr);</span><br><span class="line">    for ($i = 0; $i &lt; $length - 1; $i++) &#123;// $i为已经排序序列的末尾下标</span><br><span class="line">        $min = $i;// 暂存未排列序列的最小值下标</span><br><span class="line">        for ($j = $i + 1; $j &lt; $length; $j++) &#123;//遍历未排列序列</span><br><span class="line">            if ($arr[$j] &lt; $arr[$min]) &#123;</span><br><span class="line">                $min = $j;//找出排列序列最小值，下标赋给$min</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if ($min != $i) &#123;//如果找到最小值，放到已排列序列末尾</span><br><span class="line">            $t = $arr[$min];</span><br><span class="line">            $arr[$min] = $arr[$i];</span><br><span class="line">            $arr[$i] = $t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return $arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法-冒泡排序</title>
+    <url>/2018/07/25/bubbleSort/</url>
+    <content><![CDATA[<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序算法的原理如下：</p>
+<ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ul>
+<h1 id="动画演示"><a href="#动画演示" class="headerlink" title="动画演示"></a>动画演示</h1><p><img src="/img/bubbleSor.gif"></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function BubbleSort($arr)</span><br><span class="line">&#123;</span><br><span class="line">    $length = count($arr);</span><br><span class="line">    for ($i = 0; $i &lt; $length - 1; $i++) &#123; //每次最大元素移到数组最后</span><br><span class="line">        // 内部循环次数=数组长度-已经排序好的个数-1</span><br><span class="line">        for ($j = 0; $j &lt; $length - 1 - $i; $j++) &#123;</span><br><span class="line">            // 比较相邻两个元素，较大的后移(换位置)</span><br><span class="line">            if ($arr[$j] &gt; $arr[$j + 1]) &#123;</span><br><span class="line">                $t = $arr[$j];</span><br><span class="line">                $arr[$j] = $arr[$j + 1];</span><br><span class="line">                $arr[$j + 1] = $t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return $arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>laravel pip管道验证HTTP 极思惶恐</title>
+    <url>/2018/05/17/laravel_pip/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最近研究laravel底层 看到这个pip管道。看后一脸茫然。茶不思饭不想，半夜还在回忆它这个代码。<br>皇天不负苦心人，finally……</p>
+</blockquote>
+<p><em>展示demo之前。先描述一个日常生活中常见的栗子——借钱。<br>Ex：cto 向leader借钱，而leader说没有，我问问下边的人<br>A说 我也没有，我问问B吧。<br>B说 没有，我问C要点…<br>最后C从蚂蚁花呗套现100元，给了B<br>B拿这个100元给A<br>A给 leader<br>leader给cto</em></p>
+<h2 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">interface Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle($request=&apos;1块&apos;,Closure $next);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//请求开始 逐一穿过</span><br><span class="line">class ranhaiqing implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle($request,Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo __class__.&quot;:好烦啊，又借&#123;$request&#125;\n&quot;;</span><br><span class="line">	    $next($request);</span><br><span class="line">        echo __class__.&quot;:就这么多钱了。\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class zhaodongran implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle($request,Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo __class__.&quot;:哎呀我也&#123;$request&#125;钱，别着急我帮你想办法\n&quot;;</span><br><span class="line">        $next($request);</span><br><span class="line">        echo __class__.&quot;:这个钱来的不容易啊\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class pangxiaofei implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle($request,Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo __class__.&quot;:我没有，我向旁边人先借&#123;$request&#125;\n&quot;;</span><br><span class="line">        $next($request);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class wangdongyang implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle($request,Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo __class__.&quot;:那行吧，我从小额贷撸&#123;$request&#125;\n&quot;;</span><br><span class="line">        $next($request);</span><br><span class="line">	    echo __class__.&quot;:%@！……*-#！\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">////////////////等同于_getSlice方法/////////////////</span><br><span class="line">function getSlice()&#123;</span><br><span class="line">    return function ($stack, $pipe) &#123;</span><br><span class="line">        return function ($request) use ($stack, $pipe) &#123;</span><br><span class="line">            $slice = parentGetSlice();</span><br><span class="line">            return call_user_func($slice($stack, $pipe), $request);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">function parentGetSlice()</span><br><span class="line">&#123;   </span><br><span class="line">    return function ($stack, $pipe)&#123;</span><br><span class="line">        return function ($request) use ($stack, $pipe) &#123;</span><br><span class="line">            return $pipe::handle($request,$stack);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">///////////////////////////////////////////////////</span><br><span class="line">function _getSlice($stack, $pipe)</span><br><span class="line">&#123;</span><br><span class="line">    return function ($request) use ($stack, $pipe) &#123;</span><br><span class="line">        return $pipe::handle($request,$stack);</span><br><span class="line">        //return call_user_func_array([$pipe, &apos;handle&apos;], [$request,$stack]);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">function then($request)</span><br><span class="line">&#123;</span><br><span class="line">    $pipes = [</span><br><span class="line">        &quot;ranhaiqing&quot;,</span><br><span class="line">        &quot;zhaodongran&quot;,</span><br><span class="line">        &quot;pangxiaofei&quot;,</span><br><span class="line">        &quot;wangdongyang&quot;,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    $firstSlice = function($request) &#123;</span><br><span class="line">        echo &quot;终于有&#123;$request&#125;了\n&quot;;</span><br><span class="line">    &#125;;</span><br><span class="line">    //数组数据反转</span><br><span class="line">    $pipes = array_reverse($pipes);</span><br><span class="line">    </span><br><span class="line">    $go = array_reduce($pipes, getSlice(),$firstSlice);//var_dump($go);exit;</span><br><span class="line">    return $go($request);</span><br><span class="line">    // return call_user_func(</span><br><span class="line">    //     array_reduce($pipes, getSlice(), $firstSlice), $request</span><br><span class="line">    // );</span><br><span class="line">&#125;</span><br><span class="line">//借钱开始：</span><br><span class="line">then(&apos;1000块&apos;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ranhaiqing:好烦啊，又借1000块</span><br><span class="line">zhaodongran:哎呀我也1000块钱，别着急我帮你想办法</span><br><span class="line">pangxiaofei:我没有，我向旁边人先借1000块</span><br><span class="line">wangdongyang:那行吧，我从小额贷撸1000块</span><br><span class="line">终于有1000块了</span><br><span class="line">wangdongyang:%@！……*-#！</span><br><span class="line">zhaodongran:这个钱来的不容易啊</span><br><span class="line">ranhaiqing:就这么多钱了。</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/9856659/60749317-9b58a980-9fca-11e9-89ff-82c3c0a3df84.png" alt="image"></p>
+<h2 id="另附laravel管道处理请求"><a href="#另附laravel管道处理请求" class="headerlink" title="另附laravel管道处理请求"></a>另附laravel管道处理请求</h2><p><img src="https://user-images.githubusercontent.com/9856659/60749263-f0e08680-9fc9-11e9-8f19-43a95a2ed260.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>筛选出nginx日志中 8月份所有请求404的日志</title>
+    <url>/2018/04/30/awk_nginx_log/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$awk &apos;$4~/Aug/&amp;&amp;$9==&quot;404&quot;&amp;&amp;$7~/service.php/&#123;print $0&#125;&apos; izhuanbei_tongji.wanglibao.com.access.log &gt; tongji.txt</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>awk</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHPcode执行过程</title>
+    <url>/2018/04/28/PHPcode/</url>
+    <content><![CDATA[<ol>
+<li>Scanning(Lexing) ,将PHP代码转换为语言片段(Tokens)</li>
+<li>Parsing, 将Tokens转换成简单而有意义的表达式</li>
+<li>Compilation, 将表达式编译成Opocdes</li>
+<li>Execution, 顺次执行Opcodes，每次一条，从而实现PHP脚本的功能。</li>
+</ol>
+<blockquote>
+<p>token_get_all(),这个函数就可以将一段PHP代码 Scanning成Tokens；</p>
+</blockquote>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">➜  wdy cat for.php</span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$tokens = token_get_all(&apos;&lt;?php echo 123;?&gt;&apos;);</span><br><span class="line">print_r($tokens);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">➜  wdy php for.php</span><br><span class="line">Array</span><br><span class="line">(</span><br><span class="line">    [0] =&gt; Array</span><br><span class="line">        (</span><br><span class="line">            [0] =&gt; 374</span><br><span class="line">            [1] =&gt; &lt;?php</span><br><span class="line">            [2] =&gt; 1</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [1] =&gt; Array</span><br><span class="line">        (</span><br><span class="line">            [0] =&gt; 317</span><br><span class="line">            [1] =&gt; echo</span><br><span class="line">            [2] =&gt; 1</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [2] =&gt; Array</span><br></pre></td></tr></table></figure>
+<h3 id="vld介绍"><a href="#vld介绍" class="headerlink" title="vld介绍"></a>vld介绍</h3><blockquote>
+<p>vld是PECL（PHP 扩展和应用仓库）的一个PHP扩展，现在最新版本是 0.14.0（2016-12-18），它的作用是：显示转储PHP脚本（opcode）的内部表示（来自PECL的vld简介）。简单来说，可以查看PHP程序的opcode。</p>
+</blockquote>
+<h3 id="安装vld扩展"><a href="#安装vld扩展" class="headerlink" title="安装vld扩展"></a>安装vld扩展</h3><ol>
+<li>下载官方插件压缩包<br><span class="exturl" data-url="aHR0cDovL3BlY2wucGhwLm5ldC9wYWNrYWdlL3ZsZA==" title="http://pecl.php.net/package/vld">http://pecl.php.net/package/vld<i class="fa fa-external-link"></i></span></li>
+<li>安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># wget http://pecl.php.net/get/vld-0.14.0.tgz</span><br><span class="line"></span><br><span class="line"># tar zxvf vld-0.14.0.tgz</span><br><span class="line">root@wdy vld-0.14.0 # phpize</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Configuring for:<br>PHP Api Version:         20131106<br>Zend Module Api No:      20131226<br>Zend Extension Api No:   220131226</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line"># make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Build complete.<br>Don’t forget to run ‘make test’.</p>
+</blockquote>
+<blockquote>
+<p>Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-non-zts-20131226/</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># vi /usr/local/php/etc/php.ini</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>extension = “vld.so”</p>
+</blockquote>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5waHAubmV0L21hbnVhbC96aC9pbnN0YWxsLnBlY2wucGhwLWNvbmZpZy5waHA=" title="http://www.php.net/manual/zh/install.pecl.php-config.php">php-config<i class="fa fa-external-link"></i></span></p>
+<p>至此,VLD就安装完了。写个简单的测试文件</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@wdy ~ # cat yield.php</span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function xrange($start,$end,$step = 1)&#123;</span><br><span class="line">	for($i = $start; $i&lt;=$end;$i += $step)&#123;</span><br><span class="line">		yield $i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//foreach(xrange(1,1000000) as $num)&#123;</span><br><span class="line">//	echo $num,&quot;\n&quot;;</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$range = xrange(1,1000000);</span><br><span class="line">var_dump($range);</span><br><span class="line">var_dump($range instanceof Iterator);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@wdy ~ # php -dvld.active=1 yield.php</span><br><span class="line">Finding entry points</span><br><span class="line">Branch analysis from position: 0</span><br><span class="line">Jump found. (Code = 62) Position 1 = -2</span><br><span class="line">filename:       /root/yield.php</span><br><span class="line">function name:  (null) /*opcode所属函数。全局，此处为null。每个函数会有对应的完整的opcode信息。*/</span><br><span class="line">number of ops:  12 /*此段opcode有多少个运算操作*／</span><br><span class="line">compiled vars:  !0 = $range</span><br><span class="line">／*op list 核心部分 需要对照zend文档查看*／</span><br><span class="line">／*line 操作所在的行号*／</span><br><span class="line">／*#* 操作*／</span><br><span class="line">／*op 操作符 对应c的操作*／</span><br><span class="line">line     #* E I O op                           fetch          ext  return  operands</span><br><span class="line">-------------------------------------------------------------------------------------</span><br><span class="line">   3     0  E &gt;   NOP</span><br><span class="line">  14     1        SEND_VAL                                                 1</span><br><span class="line">         2        SEND_VAL                                                 1000000</span><br><span class="line">         3        DO_FCALL                                      2  $0      &apos;xrange&apos;</span><br><span class="line">         4        ASSIGN                                                   !0, $0</span><br><span class="line">  15     5        SEND_VAR                                                 !0</span><br><span class="line">         6        DO_FCALL                                      1          &apos;var_dump&apos;</span><br><span class="line">  16     7        FETCH_CLASS                                 128  :3      &apos;Iterator&apos;</span><br><span class="line">         8        INSTANCEOF                                       ~4      !0, $3</span><br><span class="line">         9        SEND_VAL                                                 ~4</span><br><span class="line">        10        DO_FCALL                                      1          &apos;var_dump&apos;</span><br><span class="line">  18    11      &gt; RETURN                                                   1</span><br><span class="line"></span><br><span class="line">branch: #  0; line:     3-   18; sop:     0; eop:    11; out1:  -2</span><br><span class="line">path #1: 0,</span><br><span class="line">Function xrange:</span><br><span class="line">Finding entry points</span><br><span class="line">Branch analysis from position: 0</span><br><span class="line">Jump found. (Code = 45) Position 1 = 10, Position 2 = 8</span><br><span class="line">Branch analysis from position: 10</span><br><span class="line">Jump found. (Code = 161) Position 1 = -2</span><br><span class="line">Branch analysis from position: 8</span><br><span class="line">Jump found. (Code = 42) Position 1 = 6</span><br><span class="line">Branch analysis from position: 6</span><br><span class="line">Jump found. (Code = 42) Position 1 = 4</span><br><span class="line">Branch analysis from position: 4</span><br><span class="line">filename:       /root/yield.php</span><br><span class="line">function name:  xrange</span><br><span class="line">number of ops:  11</span><br><span class="line">compiled vars:  !0 = $start, !1 = $end, !2 = $step, !3 = $i</span><br><span class="line">line     #* E I O op                           fetch          ext  return  operands</span><br><span class="line">-------------------------------------------------------------------------------------</span><br><span class="line">   3     0  E &gt;   RECV                                             !0</span><br><span class="line">         1        RECV                                             !1</span><br><span class="line">         2        RECV_INIT                                        !2      1</span><br><span class="line">   4     3        ASSIGN                                                   !3, !0</span><br><span class="line">         4    &gt;   IS_SMALLER_OR_EQUAL                              ~1      !3, !1</span><br><span class="line">         5      &gt; JMPZNZ                                        8          ~1, -&gt;10</span><br><span class="line">         6    &gt;   ASSIGN_ADD                                    0          !3, !2</span><br><span class="line">         7      &gt; JMP                                                      -&gt;4</span><br><span class="line">   5     8    &gt;   YIELD                                                    !3</span><br><span class="line">   6     9      &gt; JMP                                                      -&gt;6</span><br><span class="line">   7    10    &gt; &gt; GENERATOR_RETURN</span><br><span class="line"></span><br><span class="line">branch: #  0; line:     3-    4; sop:     0; eop:     3; out1:   4</span><br><span class="line">branch: #  4; line:     4-    4; sop:     4; eop:     5; out1:  10; out2:   8</span><br><span class="line">branch: #  6; line:     4-    4; sop:     6; eop:     7; out1:   4</span><br><span class="line">branch: #  8; line:     5-    6; sop:     8; eop:     9; out1:   6</span><br><span class="line">branch: # 10; line:     7-    7; sop:    10; eop:    10; out1:  -2</span><br><span class="line">path #1: 0, 4, 10,</span><br><span class="line">path #2: 0, 4, 8, 6, 4, 10,</span><br><span class="line">End of function xrange</span><br><span class="line"></span><br><span class="line">object(Generator)#1 (0) &#123;</span><br><span class="line">&#125;</span><br><span class="line">bool(true)</span><br></pre></td></tr></table></figure>
+<h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy5waHBwYW4uY29tLzIwMTEvMDUvdmxkLWV4dGVuc2lvbi8=" title="http://www.phppan.com/2011/05/vld-extension/">VLD扩展使用指南<i class="fa fa-external-link"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3BocC5uZXQvbWFudWFsL3poL2ludGVybmFsczIub3Bjb2Rlcy5saXN0LnBocC8=" title="http://php.net/manual/zh/internals2.opcodes.list.php/">Zend Engine 2 操作码列表<i class="fa fa-external-link"></i></span></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用group 查找文件夹下包含‘key’的文件</title>
+    <url>/2018/04/28/shell_group/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@izhp36yfj8lo876bsm8f2nz api (master) # grep PARAMS_ERROR -rl --include=&quot;*.php&quot; ./</span><br><span class="line">./config/app.php</span><br><span class="line">./app/Exceptions/OmgException.php</span><br><span class="line">./app/Http/Controllers/ActivityController.php</span><br><span class="line">./app/Http/Controllers/MarkController.php</span><br><span class="line">./app/Http/Controllers/ImgManageController.php</span><br><span class="line">./app/Http/Controllers/RedeemController.php</span><br><span class="line">./app/Http/Controllers/AwardController.php</span><br><span class="line">./app/Http/Controllers/OneYuanController.php</span><br><span class="line">./app/Http/Controllers/ExamineController.php</span><br><span class="line">./app/Http/Controllers/MoneyShareController.php</span><br><span class="line">./app/Http/Controllers/IntegralMallController.php</span><br><span class="line">./app/Http/Controllers/ChannelController.php</span><br><span class="line">./app/Http/JsonRpcs/DaZhuanPanJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/NetworkDramaDzpJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/ActivityJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/ScratchJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/RobRateCouponJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/WorldCupJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/XjdbJsonrpc.php</span><br><span class="line">./app/Http/JsonRpcs/CollectCardJsonrpc.php</span><br><span class="line">root@izhp36yfj8lo876bsm8f2nz api (master) # sed -i s/PARAMS_ERROR/USER_PARAMS_ERROR/g &apos;grep PARAMS_ERROR -rl --include=&quot;*.php&quot; ./&apos;</span><br><span class="line">sed：无法读取 grep PARAMS_ERROR -rl --include=&quot;*.php&quot; ./：没有那个文件或目录</span><br><span class="line">root@izhp36yfj8lo876bsm8f2nz api (master) # sed -i s/PARAMS_ERROR/USER_PARAMS_ERROR/g `grep PARAMS_ERROR -rl --include=&quot;*.php&quot; ./`</span><br><span class="line">root@izhp36yfj8lo876bsm8f2nz api (master) # git status</span><br></pre></td></tr></table></figure>
+<p>​​​​​​​​​​​​​​<br><img src="https://user-images.githubusercontent.com/9856659/51667733-97783280-1ffb-11e9-821c-4031fa1c3278.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Laravel中使用Ioc容器的singleton方法和bind方法创建实例的区别</title>
+    <url>/2018/04/28/laravel_bind/</url>
+    <content><![CDATA[<blockquote>
+<p>void bind(string|array $abstract, Closure|string|null $concrete = null, bool $shared = false)<br>void singleton(string|array $abstract, Closure|string|null $concrete = null)  等同于 bind($abstract,$concrete ,true)<br>void instance(string $abstract, mixed $instance)  绑定实例化对象</p>
+</blockquote>
+<p>Laravel 服务容器在使用时一般分为两个阶段：使用之前进行绑定（bind）完成将实现类绑定到接口；使用时对通过接口解析（make）出服务。<br>Laravel 内置多种不同的绑定方法以用于不同的使用场景。但无论哪种绑定方式，它们的最终目标是一致的：绑定接口到实现。<br>这样的好处是在项目的编码阶段建立起接口和实现的映射关系，到使用阶段通过抽象类（接口）解析出它的具体实现，这样就实现了项目中的解耦。</p>
+<p>在 bind 方法中，主要完成以下几个方面的处理：</p>
+<ul>
+<li>干掉之前解析过的服务实例；</li>
+<li>将绑定的实现类封装成闭包，以确保后续处理的统一；</li>
+<li>针对已解析过的服务实例，再次触发重新绑定回调函数，同时将最新的实现类更新到接口里面。</li>
+</ul>
+<p>它们两个都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例，看下面的两个例子。</p>
+<ol>
+<li>Ioc容器bind方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">require __DIR__.&apos;/../bootstrap/autoload.php&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class tanteng</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public $name=&apos;init_str&apos;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$container = new Illuminate\Container\Container();</span><br><span class="line"></span><br><span class="line">$container-&gt;bind(&apos;tanteng&apos;);</span><br><span class="line"></span><br><span class="line">$instance = $container-&gt;make(&apos;tanteng&apos;);</span><br><span class="line"></span><br><span class="line">$instance-&gt;name = &apos;tanteng&apos;;</span><br><span class="line"></span><br><span class="line">$instance2 = $container-&gt;make(&apos;tanteng&apos;);</span><br><span class="line"></span><br><span class="line">//$instance2-&gt;name = &apos;tuntun&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo $instance-&gt;name.&apos; &apos;.$instance2-&gt;name;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>输出的结果：<br>tanteng init_str</p>
+</blockquote>
+<p>结论：<br>通过bind方法创建实例不是单例模式，而是创建新的实例。</p>
+<ol start="2">
+<li>Ioc容器singleton方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">require __DIR__.&apos;/../bootstrap/autoload.php&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class single</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public $value;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$container = new Illuminate\Container\Container();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$container-&gt;singleton(&apos;single&apos;);</span><br><span class="line"></span><br><span class="line">$instance3 = $container-&gt;make(&apos;single&apos;);</span><br><span class="line"></span><br><span class="line">$instance4 = $container-&gt;make(&apos;single&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$instance3-&gt;value = &apos;aaaa&apos;;</span><br><span class="line"></span><br><span class="line">$instance4-&gt;value = &apos;bbbb&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo $instance3-&gt;value.&apos; &apos;.$instance4-&gt;value;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>输出结果：<br>bbbb bbbb</p>
+</blockquote>
+<p>结论：<br>使用singleton创建实例使用的是单例模式，每次返回同一个实例。<br>以上代码可以放在public下，如test.php运行。</p>
+<p>再看框架底层代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public function singleton($abstract, $concrete = null)</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;bind($abstract, $concrete, true);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>发现singleton方法其实也是调用bind方法，只是最后一个参数是true，表示单例模式。框架源代码：Illuminate/Container/Container.php</p>
+<p>附上bind()方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public function bind($abstract, $concrete = null, $shared = false)</span><br><span class="line">    &#123;</span><br><span class="line">        $abstract = $this-&gt;normalize($abstract);</span><br><span class="line"></span><br><span class="line">        $concrete = $this-&gt;normalize($concrete);</span><br><span class="line"></span><br><span class="line">        // If the given types are actually an array, we will assume an alias is being</span><br><span class="line">        // defined and will grab this &quot;real&quot; abstract class name and register this</span><br><span class="line">        // alias with the container so that it can be used as a shortcut for it.</span><br><span class="line">        if (is_array($abstract)) &#123;</span><br><span class="line">            list($abstract, $alias) = $this-&gt;extractAlias($abstract);</span><br><span class="line"></span><br><span class="line">            $this-&gt;alias($abstract, $alias);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // If no concrete type was given, we will simply set the concrete type to the</span><br><span class="line">        // abstract type. After that, the concrete type to be registered as shared</span><br><span class="line">        // without being forced to state their classes in both of the parameters.</span><br><span class="line">        $this-&gt;dropStaleInstances($abstract);</span><br><span class="line"></span><br><span class="line">        if (is_null($concrete)) &#123;</span><br><span class="line">            $concrete = $abstract;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // If the factory is not a Closure, it means it is just a class name which is</span><br><span class="line">        // bound into this container to the abstract type and we will just wrap it</span><br><span class="line">        // up inside its own Closure to give us more convenience when extending.</span><br><span class="line">        if (! $concrete instanceof Closure) &#123;</span><br><span class="line">            $concrete = $this-&gt;getClosure($abstract, $concrete);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $this-&gt;bindings[$abstract] = compact(&apos;concrete&apos;, &apos;shared&apos;);</span><br><span class="line"></span><br><span class="line">        // If the abstract type was already resolved in this container we&apos;ll fire the</span><br><span class="line">        // rebound listener so that any objects which have already gotten resolved</span><br><span class="line">        // can have their copy of the object updated via the listener callbacks.</span><br><span class="line">        if ($this-&gt;resolved($abstract)) &#123;</span><br><span class="line">            $this-&gt;rebound($abstract);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+        <tag>IoC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>忽略git文件权限</title>
+    <url>/2018/04/28/git_chmod/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@wdy hq_passport (dev) # git status</span><br><span class="line"># 位于分支 dev</span><br><span class="line"># 尚未暂存以备提交的变更：</span><br><span class="line">#   （使用 &quot;git add &lt;file&gt;...&quot; 更新要提交的内容）</span><br><span class="line">#   （使用 &quot;git checkout -- &lt;file&gt;...&quot; 丢弃工作区的改动）</span><br><span class="line">#</span><br><span class="line">#	修改：      app/service/rpcserverimpl/operativerpcimpl.php</span><br><span class="line">#</span><br><span class="line">修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）</span><br><span class="line">root@wdy hq_passport (dev) # git diff</span><br><span class="line">diff --git a/app/service/rpcserverimpl/operativerpcimpl.php b/app/service/rpcserverimpl/operativerpcimpl.php</span><br><span class="line">old mode 100644</span><br><span class="line">new mode 100755</span><br><span class="line">root@wdy hq_passport (dev) # git config core.filemode false</span><br><span class="line">root@wdy hq_passport (dev) # git status</span><br><span class="line"># 位于分支 dev</span><br><span class="line">无文件要提交，干净的工作区</span><br><span class="line">root@wdy hq_passport (dev) #</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config core.filemode false  // 当前版本库</span><br><span class="line">$ git config --global core.fileMode false // 所有版本库</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/9856659/51670305-54b95900-2001-11e9-9aa8-85ebb0c0ec0f.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>phpredis 和 predis</title>
+    <url>/2018/04/27/predis_phpredis/</url>
+    <content><![CDATA[<h1 id="phpredis-和-predis"><a href="#phpredis-和-predis" class="headerlink" title="phpredis 和 predis"></a>phpredis 和 predis</h1><ol>
+<li><p>phpredis 是使用c写的php扩展，predis 是使用纯php写的。<br>在性能上的区别当然是扩展更好一些，但其实这两个实现还有更大的区别，就是连接的保持。<br>phpredis在扩展中使用c可以保持php-fpm到redis的长连接，所以一个php-fpm进程上的多个请求是复用同一个连接的。phpredis的pconnect就是长连接方式。</p>
+</li>
+<li><p>predis是使用php的socket来连接redis，所以需要每次请求连接redis。<br>可以看出laravel的官方是推荐使用predis的，因为纯php实现的原因，只需要composer即可安装，非常符合laravel便捷的思想。</p>
+</li>
+</ol>
+<p><strong>phpredis 和 predis 的性能差距没有跨数量级，当然要考虑具体业务，如果业务非常依赖redis，并且单机qps需要支持的比较大，建议使用phpredis。如果你只是使用laravel使用redis实现规模小的业务，建议不用改变predis。</strong></p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C configure配置</title>
+    <url>/2018/04/27/configure/</url>
+    <content><![CDATA[<h2 id="1-说明"><a href="#1-说明" class="headerlink" title="1 说明"></a>1 说明</h2><blockquote>
+<p>在linux 中，经常需要用到交叉编译。简单地说，就是在一个平台上生成另一个平台上的可执行代码。同一个体系结构可以运行不同的操作系统；同样，同一个操作系统也可以在不同的体系结构上运行。<br>对于大部分代码，都有configure文件，让开发者进行配置，配置完毕之后自动生成makefile，然后进行编译。本文旨在说明configure中<br>常用的一些参数。</p>
+</blockquote>
+<p><span id="configure参数说明"></span></p>
+<h2 id="2-configure参数说明"><a href="#2-configure参数说明" class="headerlink" title="2 configure参数说明"></a>2 configure参数说明</h2><p><span id="查看configure 配置选项"></span></p>
+<h3 id="2-1-查看configure-配置选项"><a href="#2-1-查看configure-配置选项" class="headerlink" title="2.1 查看configure 配置选项"></a>2.1 查看configure 配置选项</h3><blockquote>
+<p>在configure目录下，运行 –help命令，可以查看到configure的配置参数一共有哪些。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[02:34:58][root@wdy:~/lnmp1.5/src/php-7.3.6]# ./configure --help</span><br><span class="line">`configure&apos; configures this package to adapt to many kinds of systems.</span><br><span class="line"></span><br><span class="line">Usage: ./configure [OPTION]... [VAR=VALUE]...</span><br><span class="line"></span><br><span class="line">To assign environment variables (e.g., CC, CFLAGS...), specify them as</span><br><span class="line">VAR=VALUE.  See below for descriptions of some of the useful variables.</span><br><span class="line"></span><br><span class="line">Defaults for the options are specified in brackets.</span><br><span class="line"></span><br><span class="line">Configuration:</span><br><span class="line">  -h, --help              display this help and exit</span><br><span class="line">      --help=short        display options specific to this package</span><br><span class="line">      --help=recursive    display the short help of all the included packages</span><br><span class="line">  -V, --version           display version information and exit</span><br><span class="line">  -q, --quiet, --silent   do not print `checking ...&apos; messages</span><br><span class="line">      --cache-file=FILE   cache test results in FILE [disabled]</span><br><span class="line">  -C, --config-cache      alias for `--cache-file=config.cache&apos;</span><br><span class="line">  -n, --no-create         do not create output files</span><br><span class="line">      --srcdir=DIR        find the sources in DIR [configure dir or `..&apos;]</span><br><span class="line"></span><br><span class="line">Installation directories:</span><br><span class="line">  --prefix=PREFIX         install architecture-independent files in PREFIX</span><br><span class="line">                          [/usr/local]</span><br><span class="line">  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX</span><br><span class="line">                          [PREFIX]</span><br><span class="line"></span><br><span class="line">By default, `make install&apos; will install all the files in</span><br><span class="line">`/usr/local/bin&apos;, `/usr/local/lib&apos; etc.  You can specify</span><br><span class="line">an installation prefix other than `/usr/local&apos; using `--prefix&apos;,</span><br><span class="line">for instance `--prefix=$HOME&apos;.</span><br><span class="line"></span><br><span class="line">For better control, use the options below.</span><br><span class="line"></span><br><span class="line">Fine tuning of the installation directories:</span><br><span class="line">  --bindir=DIR            user executables [EPREFIX/bin]</span><br><span class="line">  --sbindir=DIR           system admin executables [EPREFIX/sbin]</span><br></pre></td></tr></table></figure>
+<p><span id="2.2参数说明"></span></p>
+<h3 id="2-2-参数说明"><a href="#2-2-参数说明" class="headerlink" title="2.2 参数说明"></a>2.2 参数说明</h3><p><span id="2.2.1"></span></p>
+<h4 id="2-2-1-build-参数"><a href="#2-2-1-build-参数" class="headerlink" title="2.2.1 build 参数"></a>2.2.1 build 参数</h4><blockquote>
+<p> –build=BUILD     configure for building on BUILD [guessed]</p>
+</blockquote>
+<p>build: 执行代码编译的主机，正常的话就是你的主机系统。这个参数一般由config.guess来猜就可以。当然自己指定也可以。可以默认不写，默认为当前正在使用的ubuntu主机，如 i386-linux</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--build=i386-linux</span><br><span class="line">或者xilinx-arm的编译器主机</span><br><span class="line">--build=i686-pc-linux-gnu</span><br><span class="line">或者不写</span><br></pre></td></tr></table></figure>
+<p><span id="2.2.2"></span></p>
+<h5 id="2-2-2-host-参数"><a href="#2-2-2-host-参数" class="headerlink" title="2.2.2 host 参数"></a>2.2.2 host 参数</h5><blockquote>
+<p> –host=HOST       cross-compile to build programs to run on HOST [BUILD]</p>
+</blockquote>
+<p>指定软件运行的系统平台.如果没有指定,将会运行`config.guess’来检测.–host 指定的是交叉编译工具链的前缀。如本位中采用的是arm-xilinx-linux-gnueabi 工具链，则参数配置为:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--host=arm-xilinx-linux-gnueabi</span><br></pre></td></tr></table></figure>
+<p><span id="2.2.3"></span></p>
+<h5 id="2-2-3-target-参数"><a href="#2-2-3-target-参数" class="headerlink" title="2.2.3 target 参数"></a>2.2.3 target 参数</h5><blockquote>
+<p>  –target=TARGET   configure for building compilers for TARGET [HOST]</p>
+</blockquote>
+<p>target: 这个选项只有在建立交叉编译环境的时候用到，正常编译和交叉编译都不会用到。他用build主机上的编译器，编译一个新的编译器（binutils, gcc,gdb等），这个新的编译器将来编译出来的其他程序将运行在target指定的系统上。<br>如果不编译新的编译器，这个参数可以不填，或者与 host的参数一致</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--target=arm-xilinx-linux-gnueabi</span><br><span class="line">或者不写 --target的参数</span><br></pre></td></tr></table></figure>
+<p><span id="2.2.4"></span></p>
+<h5 id="2-2-4-CC-编译器参数"><a href="#2-2-4-CC-编译器参数" class="headerlink" title="2.2.4 CC 编译器参数"></a>2.2.4 CC 编译器参数</h5><blockquote>
+<p>CC          C compiler command</p>
+</blockquote>
+<p>指定GCC 交叉编译器命令，如果配置了，则使用CC配置的编译器，如果不配置则默认为host对应的GCC工具<br>如配置了 –host=arm-xilinx-linux-gnueabi，则默认CC的编译器为 arm-xilinx-linux-gnueabi-gcc<br>这个参数如无特殊指定，可以忽略不写。</p>
+<p><span id="2.2.5"></span></p>
+<h5 id="2-2-5-prefix-安装参数"><a href="#2-2-5-prefix-安装参数" class="headerlink" title="2.2.5 prefix 安装参数"></a>2.2.5 prefix 安装参数</h5><blockquote>
+<p> –program-prefix=PREFIX            prepend PREFIX to installed program names</p>
+</blockquote>
+<p>该参数指定编译后，文件安装的目录。<br>不指定prefix，则可执行文件默认放在/usr/local/bin，库文件默认放在/usr/local/lib，配置文件默认放在/usr/local/etc。其他的资源文件放在/usr/local/share。你要卸载这个程序，要么在原来make目录下用make uninstall(前提是make文件指定过make uninstall)，要么去上述文件中一个一个手动删除。如需指定make install 的目录，如 /home/tmp/test</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--prefix=/home/tmp/test</span><br></pre></td></tr></table></figure>
+<p>【转载】<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hob3VmZWkyMDEwL2FydGljbGUvZGV0YWlscy84Mjc2ODk5NQ==" title="https://blog.csdn.net/xhoufei2010/article/details/82768995">https://blog.csdn.net/xhoufei2010/article/details/82768995<i class="fa fa-external-link"></i></span> </p>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式-装饰着模式</title>
+    <url>/2018/04/27/dev/</url>
+    <content><![CDATA[<p><strong>装饰者模式，动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更加有弹性的替代方案。</strong></p>
+<h3 id="组合和继承的区别"><a href="#组合和继承的区别" class="headerlink" title="组合和继承的区别"></a>组合和继承的区别</h3><ul>
+<li>继承</li>
+</ul>
+<blockquote>
+<p>继承是给一个类添加行为的比较有效的途径。通过使用继承，可以使得子类在拥有自身方法的同时，还可以拥有父类的方法。但是使用继承是静态的，在编译的时候就已经决定了子类的行为，我们不便于控制增加行为的方式和时机。</p>
+</blockquote>
+<ul>
+<li>组合</li>
+</ul>
+<blockquote>
+<p>组合即将一个对象嵌入到另一个对象中，由另一个对象来决定是否引用该对象来扩展自己的行为。这是一种动态的方式，我们可以在应用程序中动态的控制。<br>与继承相比，组合关系的优势就在于不会破坏类的封装性，且具有较好的松耦合性，可以使系统更加容易维护。但是它的缺点就在于要创建比继承更多的对象。</p>
+</blockquote>
+<h3 id="装饰者模式的优缺点"><a href="#装饰者模式的优缺点" class="headerlink" title="装饰者模式的优缺点"></a>装饰者模式的优缺点</h3><ul>
+<li>优点<blockquote>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>装饰者模式可以提供比继承更多的灵活性</li>
+<li>可以通过一种动态的方式来扩展一个对象的功能，在运行时选择不同的装饰器，从而实现不同的行为</li>
+<li>通过使用不同的具体装饰类以及这些装饰类的排列组合，可以创造出很多不同行为的组合。可以使用多个具体装饰类来装饰同一对象，得到功能更为强大的对象</li>
+<li>具体构件类与具体装饰类可以独立变化，用户可以根据需要增加新的具体构件类和具体装饰类，在使用时再对其进行组合，原有代码无须改变，符合“开闭原则”</li>
+</ol>
+<ul>
+<li>缺点</li>
+</ul>
+<blockquote>
+</blockquote>
+<ol>
+<li>会产生很多的小对象，增加了系统的复杂性</li>
+<li>这种比继承更加灵活机动的特性，也同时意味着装饰模式比继承更加易于出错，排错也很困难，对于多次装饰的对象，调试时寻找错误可能需要逐级排查，较为烦琐</li>
+</ol>
+<h3 id="装饰者的使用场景"><a href="#装饰者的使用场景" class="headerlink" title="装饰者的使用场景"></a>装饰者的使用场景</h3><ol>
+<li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责</li>
+<li>需要动态地给一个对象增加功能，这些功能也可以动态地被撤销。  当不能采用继承的方式对系统进行扩充或者采用继承不利于系统扩展和维护时</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/9856659/51297117-07197b00-1a5a-11e9-940d-75765e148704.png" alt="image"></p>
+<h3 id="Ex"><a href="#Ex" class="headerlink" title="Ex:"></a>Ex:</h3><p><em>装饰者基类</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">  /**</span><br><span class="line">   * 食物基类</span><br><span class="line">   * @author xinye</span><br><span class="line">   *</span><br><span class="line">   */</span><br><span class="line">  public abstract class Food &#123;</span><br><span class="line">      protected String desc;</span><br><span class="line">     public abstract String getDesc();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>_鸡肉_<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">  /**</span><br><span class="line">   * 鸡肉</span><br><span class="line">   * @author xinye</span><br><span class="line">   */</span><br><span class="line">  public class Chicken extends Food &#123;</span><br><span class="line">      public Chicken()&#123;</span><br><span class="line">          desc = &quot;鸡肉&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">     @Override</span><br><span class="line">     public String getDesc() &#123;</span><br><span class="line">         return desc;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>_鸭肉_<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">  /**</span><br><span class="line">   * 鸭肉</span><br><span class="line">   * @author xinye</span><br><span class="line">   *</span><br><span class="line">   */</span><br><span class="line">  public class Duck extends Food &#123;</span><br><span class="line">      public Duck()&#123;</span><br><span class="line">          desc = &quot;鸭肉&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">     @Override</span><br><span class="line">     public String getDesc() &#123;</span><br><span class="line">         return desc;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p><em>装饰者基类</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">  /**</span><br><span class="line">   * @author xinye</span><br><span class="line">   */</span><br><span class="line">  public abstract class FoodDecoration extends Food &#123;</span><br><span class="line">      @Override</span><br><span class="line">     public abstract String getDesc();   </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><em>蒸-装饰者</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line"> /**</span><br><span class="line">  * 蒸食物</span><br><span class="line">  * @author xinye</span><br><span class="line">  */</span><br><span class="line"> public class SteamedFood extends FoodDecoration &#123;</span><br><span class="line">     private Food food;</span><br><span class="line">     public SteamedFood(Food f)&#123;</span><br><span class="line">         this.food = f;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     @Override</span><br><span class="line">     public String getDesc() &#123;</span><br><span class="line">         return getDecoration() + food.getDesc();</span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">     private String getDecoration()&#123;</span><br><span class="line">         return &quot;蒸&quot;;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><em>烤-装饰者</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">/**</span><br><span class="line"> * 烤食物</span><br><span class="line"> */</span><br><span class="line">public class RoastFood extends FoodDecoration &#123;</span><br><span class="line">    private Food food;</span><br><span class="line">    </span><br><span class="line">    public RoastFood(Food f)&#123;</span><br><span class="line">        this.food = f;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @Override</span><br><span class="line">    public String getDesc() &#123;</span><br><span class="line">        return getDecoration() + food.getDesc();</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">    private String getDecoration()&#123;</span><br><span class="line">        return &quot;烤&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><em>客户端</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package com.xinye.test.decoration;</span><br><span class="line">/**</span><br><span class="line"> * 客户端</span><br><span class="line"> * @author xinye</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Client &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // 测试单纯的食物</span><br><span class="line">        Food f1 = new Chicken();</span><br><span class="line">        System.out.println(f1.getDesc());</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;----------------------&quot;);</span><br><span class="line">        // 测试单重修饰的食物</span><br><span class="line">        RoastFood rf = new RoastFood(f1);</span><br><span class="line">        System.out.println(rf.getDesc());</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;----------------------&quot;);</span><br><span class="line">        // 测试多重修饰的食物</span><br><span class="line">        SteamedFood sf = new SteamedFood(rf);</span><br><span class="line">        System.out.println(sf.getDesc());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>执行结果： <br>鸡肉 ———————- <br>烤鸡肉 ———————- <br>蒸烤鸡肉</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>react组件生命周期</title>
+    <url>/2018/04/27/react_m/</url>
+    <content><![CDATA[<h2 id="UI-render-state"><a href="#UI-render-state" class="headerlink" title="UI=render(state)"></a>UI=render(state)</h2><h3 id="react生命周期"><a href="#react生命周期" class="headerlink" title="react生命周期"></a>react生命周期</h3><h2 id="1-装载"><a href="#1-装载" class="headerlink" title="1. 装载"></a>1. 装载</h2><ul>
+<li><strong>constructor</strong>构造</li>
+<li><strong>getInitialState</strong> 同构造（React.createClass） 弃用</li>
+<li><strong>getDefaultProps</strong> 同构造（React.createClass） 弃用</li>
+<li><strong>componentWillMount</strong>()  在render之前 这里的东西都可以放在构造里面</li>
+<li>render 纯函数</li>
+<li><strong>componentDidMount</strong>() 在render之后 当所有的render完成之后 。在客户端浏览器上面全部执行（可用其他UI库jquery）</li>
+</ul>
+<h2 id="2-更新-当用户交互页面时，通过修改state和props"><a href="#2-更新-当用户交互页面时，通过修改state和props" class="headerlink" title="2. 更新 -当用户交互页面时，通过修改state和props"></a>2. 更新 -当用户交互页面时，通过修改state和props</h2><ul>
+<li><p>componentWillReceiveProps(nextProps);</p>
+<blockquote>
+<p>当父 组件的render 函数被调用， 在 render函数 里面被渲染 的子组件就会经历 更新过程， 不管父组件传给子组件 的 props 有没有改变， 都会 触发 子组件的componentWillReceiveProps函数。</p>
+</blockquote>
+</li>
+<li><p>shouldComponentUpdate(nextProps, nextState){return true;} 在setState  之前执行。</p>
+<blockquote>
+<p>在更新过程中， React 库首先调用 shouldComponentUpdate 函数， 如果这个函数返回true， 那就会继续更新 过程， 接下来 调用render 函数； 反之， 如果得到 一个 false， 那就立刻停止更新过程.</p>
+</blockquote>
+</li>
+<li><p>当上面函数返回true时。依次调用：<br>  componentWillUpdate<br>  render<br>  componentDidUpdate</p>
+</li>
+</ul>
+<h2 id="3-卸载"><a href="#3-卸载" class="headerlink" title="3. 卸载"></a>3. 卸载</h2><ul>
+<li>componentWillUnmount</li>
+<li>要配合componentDidMount 使用。要不然会出现内存泄漏</li>
+</ul>
+<blockquote>
+<p>tip:</p>
+</blockquote>
+<ul>
+<li style="list-style: none"><input type="checkbox"> forceUpdate()；刷新render</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/9856659/51670011-a8777280-2000-11e9-96ba-447a3770872f.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>远程调试Debug配置</title>
+    <url>/2018/04/27/remote_debug/</url>
+    <content><![CDATA[<h4 id="1-服务器上安装xdebug，参考https-xdebug-org-wizard-php"><a href="#1-服务器上安装xdebug，参考https-xdebug-org-wizard-php" class="headerlink" title="1.服务器上安装xdebug，参考https://xdebug.org/wizard.php"></a>1.服务器上安装xdebug，参考<span class="exturl" data-url="aHR0cHM6Ly94ZGVidWcub3JnL3dpemFyZC5waHA=" title="https://xdebug.org/wizard.php">https://xdebug.org/wizard.php<i class="fa fa-external-link"></i></span></h4><p><img src="https://user-images.githubusercontent.com/9856659/60659778-d05ce300-9e88-11e9-8216-e37a01047b82.png" alt="image"></p>
+<h4 id="2-添加server上面php-ini配置"><a href="#2-添加server上面php-ini配置" class="headerlink" title="2.添加server上面php.ini配置"></a>2.添加server上面php.ini配置</h4><p><img src="https://user-images.githubusercontent.com/9856659/60659867-0c904380-9e89-11e9-9d9c-6754647e40d9.png" alt="image"></p>
+<blockquote>
+<p>其中xdebug.remote_host 是本地IDE的ip<br>xdebug.idekey 要和后面IDE中的配置一致<br>xdebug.remote_handler=dbgp 代理模式</p>
+</blockquote>
+<h4 id="3-phpstorm配置"><a href="#3-phpstorm配置" class="headerlink" title="3.phpstorm配置"></a>3.phpstorm配置</h4><p><img src="https://user-images.githubusercontent.com/9856659/60659924-26ca2180-9e89-11e9-9c65-3073eddcb97c.png" alt="image"></p>
+<blockquote>
+<p>代理配置：IDE key  和服务器上面php.ini一致</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/9856659/60659943-30538980-9e89-11e9-8c56-e2733eb66ead.png" alt="image"></p>
+<h4 id="4-debug配置"><a href="#4-debug配置" class="headerlink" title="4.debug配置"></a>4.debug配置</h4><p><img src="https://user-images.githubusercontent.com/9856659/60659959-3ba6b500-9e89-11e9-8de1-310eec41f551.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>debug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Laravel——timestamp字段</title>
+    <url>/2018/04/27/laravel_timestamp/</url>
+    <content><![CDATA[<blockquote>
+<p>Larval  使用migrate的时候 创建新表：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Schema::create(&apos;friend_30_limit_task&apos;, function (Blueprint $table) &#123;</span><br><span class="line">            $table-&gt;increments(&apos;id&apos;);</span><br><span class="line"></span><br><span class="line">            $table-&gt;timestamp(&apos;limit_time&apos;)-&gt;comment(&apos;过期时间&apos;);</span><br><span class="line"></span><br><span class="line">            $table-&gt;timestamps();</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>而我去更新数据的时候。发现limit_time字段 和update_at字段一样会随着数据的更新而更新。</strong></p>
+<p>立即回头去翻看了数据表：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `friend_30_limit_task` (</span><br><span class="line">  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line"></span><br><span class="line">  `limit_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;过期时间&apos;,</span><br><span class="line"></span><br><span class="line">  `created_at` timestamp NULL DEFAULT NULL,</span><br><span class="line">  `updated_at` timestamp NULL DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`),</span><br><span class="line">  KEY `friend_30_limit_task_user_id_index` (`user_id`),</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci</span><br></pre></td></tr></table></figure>
+<p><strong>DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP</strong> 自动给我加了个这么个鬼东西。</p>
+<p>找出mysql文档，<span class="exturl" data-url="aHR0cHM6Ly9kZXYubXlzcWwuY29tL2RvYy9yZWZtYW4vNS43L2VuL3NlcnZlci1zeXN0ZW0tdmFyaWFibGVzLmh0bWwjc3lzdmFyX2V4cGxpY2l0X2RlZmF1bHRzX2Zvcl90aW1lc3RhbXA=" title="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp">https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp<i class="fa fa-external-link"></i></span></p>
+<p><img src="https://user-images.githubusercontent.com/9856659/54903040-e10ace00-4f15-11e9-95fa-1028531b64f9.png" alt="image"></p>
+<p>其中第二条，当表中的第一个<strong>TIMESTAMP</strong> 字段，并且默认不为空时。会自动加上 上面两个属性。</p>
+<p>Ok找到问题，开始修改，新建一个migrate更新文件</p>
+<p>参照laravel文档修改：<strong>$table-&gt;timestamp(‘limit_time’)-&gt;nullable()；</strong></p>
+<p>结果运行报错<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Doctrine\DBAL\DBALException]</span><br><span class="line">  Unknown column type &quot;timestamp&quot; requested. Any Doctrine type that you use has to be registered with \Doctrine\DBAL\Types\Type::addType(). You can get a list of all the known types with \Doctrine\DB</span><br><span class="line">  AL\Types\Type::getTypesMap(). If this error occurs during database introspection then you might have forgot to register all database types for a Doctrine Type. Use AbstractPlatform#registerDoctrine</span><br><span class="line">  TypeMapping() or have your custom types implement Type#getMappedDatabaseTypes(). If the type name is empty you might have a problem with the cache or forgot some mapping information.</span><br></pre></td></tr></table></figure></p>
+<p>google。。。<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2xhcmF2ZWwvZnJhbWV3b3JrL2lzc3Vlcy8xNjUyNu+8jOWkp+iHtOaEj+aAneaYrw==" title="https://github.com/laravel/framework/issues/16526，大致意思是">https://github.com/laravel/framework/issues/16526，大致意思是<i class="fa fa-external-link"></i></span> 大佬们互相撕逼说这不是laravel框架的问题，这是doctrine/dbal的问题。：）<br>继续追，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY3RyaW5lL2RiYWwvaXNzdWVzLzI1NTg=" title="https://github.com/doctrine/dbal/issues/2558">https://github.com/doctrine/dbal/issues/2558<i class="fa fa-external-link"></i></span></p>
+<p><img src="https://user-images.githubusercontent.com/9856659/54903130-24653c80-4f16-11e9-8117-dd30411073c4.png" alt="image"></p>
+<p><strong>TIMESTAMP 是mysql的特定类型</strong>。并且我们不准备支持它。你可以改用DATETIME 类型。</p>
+<p><strong>THE END:</strong><br>删除 表migrations 的迭代更新记录、删除。重新artisan migrate。-</p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>new self 和new static</title>
+    <url>/2018/04/27/self_static/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">//new self 和new static 只有在继承中才有区别</span><br><span class="line">//new static()则是由调用者决定的</span><br><span class="line"></span><br><span class="line">class F &#123;</span><br><span class="line"></span><br><span class="line">    public function getNewFather() &#123;</span><br><span class="line">        return new self();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function getNewCaller() &#123;</span><br><span class="line">        return new static();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class Sun1 extends F &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Sun2 extends F &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$sun1 = new Sun1();</span><br><span class="line">$sun2 = new Sun2();</span><br><span class="line"></span><br><span class="line">print get_class($sun1-&gt;getNewFather());// F</span><br><span class="line">print get_class($sun1-&gt;getNewCaller());// Sun1</span><br><span class="line">print get_class($sun2-&gt;getNewFather());// F</span><br><span class="line">print get_class($sun2-&gt;getNewCaller());// Sun2</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>bashrc中添加git</title>
+    <url>/2018/04/27/git_bashrc/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># .bashrc</span><br><span class="line"></span><br><span class="line"># User specific aliases and functions</span><br><span class="line"></span><br><span class="line">alias rm=&apos;rm -i&apos;</span><br><span class="line">alias cp=&apos;cp -i&apos;</span><br><span class="line">alias mv=&apos;mv -i&apos;</span><br><span class="line">alias la=&apos;ls -a&apos;</span><br><span class="line"></span><br><span class="line"># Source global definitions</span><br><span class="line">if [ -f /etc/bashrc ]; then</span><br><span class="line">	. /etc/bashrc</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export NVM_DIR=&quot;/root/.nvm&quot;</span><br><span class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#function</span><br><span class="line">#mkdir and enter it</span><br><span class="line">mkcd()&#123;</span><br><span class="line">	mkdir &quot;$1&quot; &amp;&amp; cd &quot;$1&quot;</span><br><span class="line">&#125;</span><br><span class="line">#alias for cnpm</span><br><span class="line">alias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \</span><br><span class="line">  --cache=$HOME/.npm/.cache/cnpm \</span><br><span class="line">  --disturl=https://npm.taobao.org/dist \</span><br><span class="line">  --userconfig=$HOME/.cnpmrc&quot;</span><br><span class="line"></span><br><span class="line">#source ~/git/nvm.sh</span><br><span class="line">source ~/.git-completion.bash</span><br><span class="line"># 文件：https://github.com/git/git/tree/master/contrib/completion</span><br><span class="line"># 显示分支官方实现</span><br><span class="line">GIT_PS1_SHOWDIRTYSTATE=true</span><br><span class="line">GIT_PS1_SHOWCOLORHINTS=true</span><br><span class="line">if [ -f ~/.git-completion.bash ]; then</span><br><span class="line">  source ~/.git-prompt.sh</span><br><span class="line">  PROMPT_COMMAND=&apos;__git_ps1 &quot;[\t][\u@\h:\w]&quot; &quot;\\\$ &quot;&apos;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack 修改dev-server 端口</title>
+    <url>/2018/04/27/webpack_port/</url>
+    <content><![CDATA[<h1 id="相关错误"><a href="#相关错误" class="headerlink" title="相关错误"></a>相关错误</h1><blockquote>
+<p>运行webpack 报Invalid Host header！</p>
+</blockquote>
+<h3 id="Package-json-属性说明"><a href="#Package-json-属性说明" class="headerlink" title="Package.json 属性说明"></a>Package.json 属性说明</h3><ul>
+<li>name - 包名。</li>
+<li>version - 包的版本号。</li>
+<li>description - 包的描述。</li>
+<li>homepage - 包的官网 url 。</li>
+<li>author - 包的作者姓名。</li>
+<li>contributors - 包的其他贡献者姓名。</li>
+<li>dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
+<li>repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
+<li>main - main 字段指定了程序的主入口文件，require(‘moduleName’) 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。</li>
+<li>keywords - 关键字</li>
+</ul>
+<h1 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h1><blockquote>
+<p>webpack-dev-server是一个小型的Node.js Express服务器,它使用webpack-dev-middleware来服务于webpack的包,除此自外，它还有一个通过Sock.js来连接到服务器的微型运行时</p>
+</blockquote>
+<p>demo:<br><a href="git@github.com:ruanyf/webpack-demos.git">git clone git@github.com:ruanyf/webpack-demos.git</a></p>
+<p>webpack.config.js 配置文件参数详细介绍:<span class="exturl" data-url="aHR0cHM6Ly9kb2Mud2VicGFjay1jaGluYS5vcmcvY29uZmlndXJhdGlvbi8=" title="https://doc.webpack-china.org/configuration/"> webpack 官方文档<i class="fa fa-external-link"></i></span></p>
+<p>webpack-dev-server<br>运行 Invalid Host header</p>
+<p>解决办法</p>
+<p>经过检测 端口8080 只允许监听本地的8080端口</p>
+<blockquote>
+<p>root@wdy ~ # netstat -aon</p>
+</blockquote>
+<blockquote>
+<p>Active Internet connections (servers and established)<br>Proto Recv-Q Send-Q Local Address           Foreign Address         State       Timer<br>tcp        0      0 0.0.0.0:139             0.0.0.0:<em>               LISTEN      off (0.00/0/0)<br>tcp        0      0 0.0.0.0:6379            0.0.0.0:</em>               LISTEN      off (0.00/0/0)<br>tcp        0      0 127.0.0.1:11211         0.0.0.0:<em>               LISTEN      off (0.00/0/0)<br>tcp        0      0 127.0.0.1:8080          0.0.0.0:</em>               LISTEN</p>
+</blockquote>
+<p>改用<br><figure class="highlight plain"><figcaption><span>webpack-dev-server --host 0.0.0.0 ```</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">仍提示Invalid Host header</span><br><span class="line"></span><br><span class="line">```# vi webpack.config.js</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//追加配置</span><br><span class="line">devServer: &#123;</span><br><span class="line">    host: &apos;0.0.0.0&apos;,</span><br><span class="line">    disableHostCheck: true</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>success！</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim常用操作</title>
+    <url>/2018/04/27/vim/</url>
+    <content><![CDATA[<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
+<li>退出：:q   或者ZZ</li>
+<li>插入： i，a，L，A，O，o</li>
+</ul>
+<p><span id="复制"></span></p>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yy --复制一行,3yy复制三行</span><br><span class="line">yw --复制一个词 2yw复制2个词。p 粘贴出来</span><br></pre></td></tr></table></figure>
+<p><span id="删除"></span></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dd --删除一行，即（d1）</span><br><span class="line">D  --删除到行尾，即“d$”</span><br></pre></td></tr></table></figure>
+<p><span id="撤销、重做"></span></p>
+<h2 id="撤销、重做"><a href="#撤销、重做" class="headerlink" title="撤销、重做"></a>撤销、重做</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u（undo），CTRL-R（redo）</span><br></pre></td></tr></table></figure>
+<p><span id="移动"></span></p>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><blockquote>
+<p>hl 左右移动<br>jk 下上移动</p>
+</blockquote>
+<p><span id="按字（词）移动光标"></span></p>
+<ol>
+<li>按字（词）移动光标<blockquote>
+<p>w和W命令：将光标右移至下一个字的字首，它们的区别是：w命令，把光标移到下一个字（狭义）的字首，W命令，将把光标移到下一个字（广义）的字首。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>b和B命令：如果光标处于所在字内（即非字首），则该命令将把光标移至本字字首；如果光标处于所在字字首，则该命令将把光标移到上一个字的字首。<br><span id="按句移动光标"></span></p>
+<ol start="2">
+<li>按句移动光标<br>( 命令：将光标移至上一个句子的开头；<br>) 命令：将光标移至下一个句子的开头。<br><span id="按段移动光标"></span></li>
+<li>按段移动光标<br>{ 命令：将光标向前移至上一个段的开头；<br>} 命令：将光标向后移至下一个段的开头。<br><span id="移动到行首或行尾"></span></li>
+<li>移动到行首或行尾<br>$ 移动到行尾。1$表示：移动到当前行的行尾；2$表示：移动到下一行的行尾；<br>^ 移动到行首 数字0  也是移动到行首</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>“G” 命令把光标移动到文末；<br>“gg”命令把光标移动到文首；<br><span id="括号匹配"></span></p>
+<ol start="5">
+<li>括号匹配<br>% 它能匹配一对括号(即“( )”，“[ ]”，“{ }”)。<br>如果光标在“(”上，它移动到对应的“)”上，反之，如果它在“)”上，它移动到“(”上。<br>当光标不在一个有用的字符上，“%”会先向前找到一个，然后会移动到它的匹配处。<br><span id="使用记号（mark）"></span></li>
+<li>使用记号（mark）<br>当用“G”命令跳到另一个地方，Vim会记住你从什么地方跳过去的，这个位置成为一个记号（mark）。可以成为记号的还有查找命令：“/”和“?”</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>CTRL-O命令跳到一个“较老”的地方（提示：O表示older)；<br>CTRL-I命令跳到一个“较新”的地方（提示：I在键盘上仅靠着O）；</p>
+</blockquote>
+<p><span id="多个文件分割窗口"></span></p>
+<h2 id="多个文件分割窗口"><a href="#多个文件分割窗口" class="headerlink" title="多个文件分割窗口"></a>多个文件分割窗口</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:split a.php	水平分割(sp)</span><br><span class="line">:vsplit xxx	垂直分割</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口之间跳转<br>CTRL-w w 用于在窗口间跳动<br>CTRL-w h 跳转到左边的窗口<br>CTRL-w j 跳转到下面的窗口<br>CTRL-w k 跳转到上面的窗口<br>CTRL-w l 跳转到右边的窗口</p>
+</blockquote>
+<p><span id="对比文件不同"></span></p>
+<h3 id="对比文件不同"><a href="#对比文件不同" class="headerlink" title="对比文件不同"></a>对比文件不同</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vimdiff 文件1 文件2</span><br></pre></td></tr></table></figure>
+<p><span id="搜索与替换"></span></p>
+<h2 id="搜索与替换"><a href="#搜索与替换" class="headerlink" title="搜索与替换"></a>搜索与替换</h2><blockquote>
+<p>  : s // 和:g//，:!g//<br>:s是替换操作，:g是查找匹配模式的行，:!g是查找不匹配模式的行。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/word  向下搜索word</span><br><span class="line">?word 向上搜索word</span><br><span class="line">配合使用 n/N</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:s/old/new/	替换一行  第一个</span><br><span class="line">:s/old/new/g	替换当前行所有</span><br><span class="line"></span><br><span class="line">:n1,n2s/word1/word2/g	n1与n2 都为数字，表示行数,</span><br><span class="line">可在第 n1 行与第 n2 行之间寻找 word1 字符串，并替换为 word2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:1,$s/word1/word2/g	表示从第一行到最后一行，将 word1 字符串替换为 word2 </span><br><span class="line">:1,$s/word1/word2/gc	表示从第一行到最后一行，也是将 word1 字符串替换为 word2，不同之处是在替换前显示提示字元，由用户确认是否最终替换</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>“%” ：表示整个文件，同“1,$”；</p>
+<p>“. ,$” ：从当前行到文件尾；</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图解aclocal、autoconf、automake、autoheader、configure</title>
+    <url>/2018/04/27/c_make/</url>
+    <content><![CDATA[<h2 id="1-autoscan-autoconf"><a href="#1-autoscan-autoconf" class="headerlink" title="1.autoscan (autoconf)"></a>1.autoscan (autoconf)</h2><p>autoscan (autoconf): 扫描源代码以搜寻普通的可移植性问题，比如检查编译器，库，头文件等，生成文件configure.scan,它是configure.ac的一个雏形。</p>
+<h2 id="2-aclocal-automake"><a href="#2-aclocal-automake" class="headerlink" title="2.aclocal (automake)"></a>2.aclocal (automake)</h2><p>aclocal (automake):根据已经安装的宏，用户定义宏和acinclude.m4文件中的宏将configure.ac文件所需要的宏集中定义到文件 aclocal.m4中。aclocal是一个perl 脚本程序，它的定义是：“<strong>aclocal - create aclocal.m4 by scanning configure.ac</strong>”</p>
+<p><img src="https://user-images.githubusercontent.com/9856659/53383820-ce06eb80-39b3-11e9-96e8-66d8a471d371.png" alt="image"></p>
+<h2 id="3-autoheader-autoconf"><a href="#3-autoheader-autoconf" class="headerlink" title="3. autoheader(autoconf)"></a>3. autoheader(autoconf)</h2><p>autoheader(autoconf): 根据configure.ac中的某些宏，比如cpp宏定义，运行m4，声称config.h.in</p>
+<p><img src="https://user-images.githubusercontent.com/9856659/53383951-3d7cdb00-39b4-11e9-84d4-47ae1007e637.png" alt="image"></p>
+<h2 id="4-automake"><a href="#4-automake" class="headerlink" title="4. automake"></a>4. automake</h2><p>automake: automake将Makefile.am中定义的结构建立Makefile.in，然后configure脚本将生成的Makefile.in文件转换为Makefile。如果在configure.ac中定义了一些特殊的宏，比如AC_PROG_LIBTOOL，它会调用libtoolize，否则它会自己产生config.guess和config.sub</p>
+<p><img src="https://user-images.githubusercontent.com/9856659/53383937-30f88280-39b4-11e9-93bb-40214df80646.png" alt="image"></p>
+<h2 id="5-autoconf"><a href="#5-autoconf" class="headerlink" title="5. autoconf"></a>5. autoconf</h2><p>autoconf:将configure.ac中的宏展开，生成configure脚本。这个过程可能要用到aclocal.m4中定义的宏。</p>
+<p><img src="https://user-images.githubusercontent.com/9856659/53383972-55545f00-39b4-11e9-9776-3e9cbc784b49.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell 1&gt;&amp;2 2&gt;&amp;1 &amp;&gt;filename重定向的含义和区别</title>
+    <url>/2018/04/27/shell_r/</url>
+    <content><![CDATA[<blockquote>
+<p>当初在shell中, 看到”&gt;&amp;1”和”&gt;&amp;2”始终不明白什么意思.经过在网上的搜索得以解惑.其实这是两种输出.</p>
+</blockquote>
+<p>在 shell 程式中，最常使用的 FD (file descriptor) 大概有三个, 分别是:</p>
+<p><strong>0 是一个文件描述符，表示标准输入(stdin)<br>1 是一个文件描述符，表示标准输出(stdout)<br>2 是一个文件描述符，表示标准错误(stderr)</strong></p>
+<p>在标准情况下, 这些FD分别跟如下设备关联:<br>stdin(0): keyboard 键盘输入,并返回在前端<br>stdout(1): monitor 正确返回值 输出到前端<br>stderr(2): monitor 错误返回值 输出到前端</p>
+<p>举例说明吧:<br>当前目录只有一个文件 a.txt.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@redhat box]# ls </span><br><span class="line">a.txt </span><br><span class="line">[root@redhat box]# ls a.txt b.txt </span><br><span class="line">ls: b.txt: No such file or directory 由于没有b.txt这个文件, 于是返回错误值, 这就是所谓的2输出 </span><br><span class="line">a.txt 而这个就是所谓的1输出</span><br></pre></td></tr></table></figure></p>
+<p>再接着看:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@redhat box]# ls a.txt b.txt 1&gt;file.out 2&gt;file.err </span><br><span class="line">执行后,没有任何返回值. 原因是, 返回值都重定向到相应的文件中了,而不再前端显示 </span><br><span class="line">[root@redhat box]# cat file.out </span><br><span class="line">a.txt </span><br><span class="line">[root@redhat box]# cat file.err </span><br><span class="line">ls: b.txt: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p>一般来说, “1&gt;” 通常可以省略成 “&gt;”.<br>即可以把如上命令写成: ls a.txt b.txt &gt;file.out 2&gt;file.err<br>有了这些认识才能理解 “1&gt;&amp;2” 和 “2&gt;&amp;1”.<br>1&gt;&amp;2 正确返回值传递给2输出通道 &amp;2表示2输出通道<br>如果此处错写成 1&gt;2, 就表示把1输出重定向到文件2中.<br>2&gt;&amp;1 错误返回值传递给1输出通道, 同样&amp;1表示1输出通道.<br>举个例子.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@redhat box]# ls a.txt b.txt 1&gt;file.out 2&gt;&amp;1 </span><br><span class="line">[root@redhat box]# cat file.out </span><br><span class="line">ls: b.txt: No such file or directory </span><br><span class="line">a.txt</span><br></pre></td></tr></table></figure></p>
+<p>现在, 正确的输出和错误的输出都定向到了file.out这个文件中, 而不显示在前端.<br>补充下, 输出不只1和2, 还有其他的类型, 这两种只是最常用和最基本的.<br> <strong>&gt;是重定向符，就是把前面输出的内容重定向到后面指定的位置，比如（例1）：</strong></p>
+<p>echo “一些内容” &gt; filename.txt<br>上面例子会把 “一些内容” 写入到 filename.txt 文件中。</p>
+<blockquote>
+<p>前是可以加数字来说明把什么内容重定向到文件中，默认是把标准输出重定向到文件中，所以下面这个例子和上面那个是一样的（例2）：</p>
+</blockquote>
+<p>echo “一些内容” 1&gt; filename.txt<br>如果是错误信息就不会输出到filename.txt（例3）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls nodir 1&gt; filename.txt</span><br><span class="line">$ ls: nodir: No such file or directory</span><br><span class="line">上面这个例子中nodir不存在，所以通过ls命令查询时错误信息会输出到 2(stderr)，但我们指定的是把1重定向到filename.txt，所以上面命令执行完后，filename.txt中是没有内容的。但是执行下面命令就会把错误信息写入到filename.txt中（例4）：</span><br><span class="line"></span><br><span class="line">$ ls nodir 2&gt; filename.txt</span><br><span class="line">$ cat filename.txt</span><br><span class="line">$ ls: nodir: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p><strong>&amp; 是一个描述符，如果1或2前不加&amp;，会被当成一个普通文件。</strong></p>
+<blockquote>
+<p>1&gt;&amp;2 意思是把标准输出重定向到标准错误.<br>2&gt;&amp;1 意思是把标准错误输出重定向到标准输出。<br>&amp;&gt;filename 意思是把标准输出和标准错误输出都重定向到文件filename中</p>
+</blockquote>
+<p>我们再看一个例子（列5）：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls nodir 1&gt; filename.txt 2&gt;&amp;1</span><br><span class="line">$ cat filename.txt</span><br><span class="line">$ ls: nodir: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p>上面例子把 标准输出 重定向到文件 filename.txt，然后把 标准错误 重定向到 标准输出，所以最后的错误信息也通过标准输出写入到了文件中，比较例3，4，5，就能明白其作用。<br>下面是来自百度知道的内容，大家可以参考下：<br>问：Linux重定向中 &gt;&amp;2 怎么理解？<br>问题补充：echo “aaaaaaaaaaaaaaaa” &gt;&amp;2 怎么理解？<br>答：</p>
+<blockquote>
+<p>&amp;2 即 1&gt;&amp;2 也就是把结果输出到和标准错误一样；之前如果有定义标准错误重定向到某log文件，那么标准输出也重定向到这个log文件<br>如：ls 2&gt;a1 &gt;&amp;2 （等同 ls &gt;a1 2&gt;&amp;1）<br>把标准输出和标准错误都重定向到a1，终端上看不到任何信息。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sql分组内排序</title>
+    <url>/2018/04/27/sql_group_srot/</url>
+    <content><![CDATA[<blockquote>
+<p>前两天同学遇到这样一个需求。用sql找出成绩表中 各科前10名学生名单。 成绩表字典我就不说明了，大家都懂。<br>他说只用sql处理。我当时首先想到的是存储过程、游标之类的。<br>过后，他又提起这个事情来。告诉我说不用存储过程就可以。然后给我贴了实例出来。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `ads_credit_applylog`;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `ads_credit_applylog` (</span><br><span class="line">  `id` varchar(20) NOT NULL,</span><br><span class="line">  `customer_id` varchar(20) DEFAULT NULL,</span><br><span class="line">  `ips` int(20) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Records of ads_credit_applylog</span><br><span class="line">-- ----------------------------</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;1&apos;, &apos;15588&apos;, &apos;921&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;2&apos;, &apos;15588&apos;, &apos;597&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;3&apos;, &apos;15588&apos;, &apos;483&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;4&apos;, &apos;15588&apos;, &apos;1000&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;5&apos;, &apos;12619&apos;, &apos;421&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;6&apos;, &apos;12619&apos;, &apos;358&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;7&apos;, &apos;12619&apos;, &apos;523&apos;);</span><br><span class="line">INSERT INTO `ads_credit_applylog` VALUES (&apos;8&apos;, &apos;12619&apos;, &apos;879&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">select  (@i := case  when  @pre_parent_code=customer_id then @i + 1 else 1 end )  rownum,                       </span><br><span class="line">customer_id,ips,(@pre_parent_code:=customer_id)                      </span><br><span class="line">from </span><br><span class="line">#ads_credit_applylog ,</span><br><span class="line">#需要先排好序</span><br><span class="line">(select customer_id,ips from ads_credit_applylog order by customer_id,ips desc ) a , </span><br><span class="line">                   </span><br><span class="line">(SELECT  @i := 0, @pre_parent_code:=&apos;&apos;) AS b                     </span><br><span class="line">group  by   customer_id ,ips desc </span><br><span class="line">order  by   customer_id,ips desc,rownum</span><br></pre></td></tr></table></figure>
+<p>利用临时表来解决排序问题。</p>
+<p>运行结果如下。<br><img src="https://user-images.githubusercontent.com/9856659/51668875-2128ff80-1ffe-11e9-9cea-2db9607ffc01.png" alt="image"></p>
+<ol>
+<li>先用SELECT定义了两个变量SELECT  @i := 0, @pre_parent_code:=’’</li>
+<li>在select中让@pre_parent_code: = customer_id</li>
+<li>然后在select中判断case  when  @i: +1 排出顺序编号</li>
+<li>在排出顺序编号时 要保证临时表order by customer_id,ips desc ) a 的顺序</li>
+</ol>
+<p>这其中牵扯到sql运行顺序到问题<br><img src="https://user-images.githubusercontent.com/9856659/51817195-a9601b00-2304-11e9-908e-5e4bccbe4ad8.png" alt="image"></p>
+<blockquote>
+<p>从这个顺序中我们不难发现，所有的 查询语句都是从from开始执行的，在执行过程中，每个步骤都会为下一个步骤生成一个虚拟表，这个虚拟表将作为下一个执行步骤的输入。 </p>
+</blockquote>
+<blockquote>
+<p>第一步：首先对from子句中的前两个表执行一个笛卡尔乘积，此时生成虚拟表 vt1（选择相对小的表做基础表） </p>
+</blockquote>
+<blockquote>
+<p>第二步：接下来便是应用on筛选器，on 中的逻辑表达式将应用到 vt1 中的各个行，筛选出满足on逻辑表达式的行，生成虚拟表 vt2 </p>
+</blockquote>
+<blockquote>
+<p>第三步：如果是outer join 那么这一步就将添加外部行，left outer jion 就把左表在第二步中过滤的添加进来，如果是right outer join 那么就将右表在第二步中过滤掉的行添加进来，这样生成虚拟表 vt3 </p>
+</blockquote>
+<blockquote>
+<p>第四步：如果 from 子句中的表数目多余两个表，那么就将vt3和第三个表连接从而计算笛卡尔乘积，生成虚拟表，该过程就是一个重复1-3的步骤，最终得到一个新的虚拟表 vt3。 </p>
+</blockquote>
+<blockquote>
+<p>第五步：应用where筛选器，对上一步生产的虚拟表引用where筛选器，生成虚拟表vt4，在这有个比较重要的细节不得不说一下，对于包含outer join子句的查询，就有一个让人感到困惑的问题，到底在on筛选器还是用where筛选器指定逻辑表达式呢？on和where的最大区别在于，如果在on应用逻辑表达式那么在第三步outer join中还可以把移除的行再次添加回来，而where的移除的最终的。举个简单的例子，有一个学生表（班级,姓名）和一个成绩表(姓名,成绩)，我现在需要返回一个x班级的全体同学的成绩，但是这个班级有几个学生缺考，也就是说在成绩表中没有记录。为了得到我们预期的结果我们就需要在on子句指定学生和成绩表的关系（学生.姓名=成绩.姓名）那么我们是否发现在执行第二步的时候，对于没有参加考试的学生记录就不会出现在vt2中，因为他们被on的逻辑表达式过滤掉了,但是我们用left outer join就可以把左表（学生）中没有参加考试的学生找回来，因为我们想返回的是x班级的所有学生，如果在on中应用学生.班级=’x’的话，left outer join会把x班级的所有学生记录找回（感谢网友康钦谋__康钦苗的指正），所以只能在where筛选器中应用学生.班级=’x’ 因为它的过滤是最终的。 </p>
+</blockquote>
+<blockquote>
+<p>第六步：group by 子句将中的唯一的值组合成为一组，得到虚拟表vt5。如果应用了group by，那么后面的所有步骤都只能得到的vt5的列或者是聚合函数（count、sum、avg等）。原因在于最终的结果集中只为每个组包含一行。这一点请牢记。 </p>
+</blockquote>
+<blockquote>
+<p>第七步：应用cube或者rollup选项，为vt5生成超组，生成vt6. </p>
+</blockquote>
+<blockquote>
+<p>第八步：应用having筛选器，生成vt7。having筛选器是第一个也是为唯一一个应用到已分组数据的筛选器。 </p>
+</blockquote>
+<blockquote>
+<p>第九步：处理select子句。将vt7中的在select中出现的列筛选出来。生成vt8. </p>
+</blockquote>
+<blockquote>
+<p>第十步：应用distinct子句，vt8中移除相同的行，生成vt9。事实上如果应用了group by子句那么distinct是多余的，原因同样在于，分组的时候是将列中唯一的值分成一组，同时只为每一组返回一行记录，那么所以的记录都将是不相同的。 </p>
+</blockquote>
+<blockquote>
+<p>第十一步：应用order by子句。按照order_by_condition排序vt9，此时返回的一个游标，而不是虚拟表。sql是基于集合的理论的，集合不会预先对他的行排序，它只是成员的逻辑集合，成员的顺序是无关紧要的。对表进行排序的查询可以返回一个对象，这个对象包含特定的物理顺序的逻辑组织。这个对象就叫游标。正因为返回值是游标，那么使用order by 子句查询不能应用于表表达式。排序是很需要成本的，除非你必须要排序，否则最好不要指定order by，最后，在这一步中是第一个也是唯一一个可以使用select列表中别名的步骤。 </p>
+</blockquote>
+<blockquote>
+<p>第十二步：应用top选项。此时才返回结果给请求者即用户。</p>
+</blockquote>
+<blockquote>
+<p>原文：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQwNDQ4MTIvYXJ0aWNsZS9kZXRhaWxzLzUxMDA0NzU0" title="https://blog.csdn.net/u014044812/article/details/51004754">https://blog.csdn.net/u014044812/article/details/51004754<i class="fa fa-external-link"></i></span><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通过laravel了解DI/IoC</title>
+    <url>/2018/04/27/laravel/</url>
+    <content><![CDATA[<blockquote>
+<p>高级模块不应该依赖于低级模块，两者都应该依赖于抽象对象。 抽象不应该依赖于细节，细节应该取决于抽象。<br>—Robert C. Martin</p>
+</blockquote>
+<blockquote>
+<p>「ioc 依赖注入」的结果就是「DI 控制反转」的目的，也就说 控制反转 的最终目标是为了 实现项目的高内聚低耦合，而 实现这种目标 的方式则是通过 依赖注入。 </p>
+</blockquote>
+<p><em>说白了  DI/ioc 其实是抽象工厂模式的一种升华(超级工厂)。</em></p>
+<h2 id="一、依赖的产生"><a href="#一、依赖的产生" class="headerlink" title="一、依赖的产生"></a>一、依赖的产生</h2><p>直接上代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface interfaceB&#123;&#125;</span><br><span class="line">class B implements interfaceB</span><br><span class="line">&#123;</span><br><span class="line">	public function someFun()&#123;</span><br><span class="line">		echo &quot;DI/IoC&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">	protected $a; //放入B的实例</span><br><span class="line">	public function __construct(interfaceB $objectB)&#123; //类型提示类(面向接口)</span><br><span class="line">		$this-&gt;a = $objectB;</span><br><span class="line">	&#125;</span><br><span class="line">	public function aFun()&#123;</span><br><span class="line">		$this-&gt;a-&gt;someFun();//调用B类的方法</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$bb = new B();</span><br><span class="line">$a = new A($bb);</span><br><span class="line">$a-&gt;aFun();</span><br></pre></td></tr></table></figure>
+<h2 id="二、IoC容器"><a href="#二、IoC容器" class="headerlink" title="二、IoC容器"></a>二、IoC容器</h2><p>上面的例子我们是通过手动的方式注入依赖，而IoC可以自动实现依赖注入。下面通过laravel框架中的设计方法进行简化。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Container</span><br><span class="line">&#123;</span><br><span class="line">	protected $bindings = [];</span><br><span class="line"></span><br><span class="line">	//2.1绑定*************************</span><br><span class="line">	public function bind($abstract, $concrete=null, $shared = false)&#123;</span><br><span class="line"></span><br><span class="line">		//如果不是回调函数，则产生一个回调函数</span><br><span class="line">		if(! $concrete instanceof Closure)&#123;</span><br><span class="line">			$concrete = $this-&gt;getClosure($abstract,$concrete);</span><br><span class="line">		&#125;</span><br><span class="line">		$this-&gt;bindings[$abstract] = compact(&apos;concrete&apos;,&apos;share&apos;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//默认生成的回调函数</span><br><span class="line">	protected function getClosure($abstract, $concrete)&#123;</span><br><span class="line">		return function($c) use($abstract, $concrete)&#123;</span><br><span class="line">			$method = ($abstract == $concrete)?&apos;build&apos;:&apos;make&apos;;</span><br><span class="line">			return $c-&gt;$method($concrete);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	//*************************************</span><br><span class="line">	//2.2解析-解决依赖</span><br><span class="line">	public function make($abstract)&#123;</span><br><span class="line">		$concrete = isset($this-&gt;bindings[$abstract])? $this-&gt;bindings[$abstract][&apos;concrete&apos;] : $abstract;</span><br><span class="line"></span><br><span class="line">		if($this-&gt;isBuildable($concrete,$abstract))&#123;</span><br><span class="line">			$object = $this-&gt;build($concrete);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			$object = $this-&gt;make($concrete);</span><br><span class="line">		&#125;</span><br><span class="line">		return $object;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	protected function isBuildable($concrete, $abstract)&#123;</span><br><span class="line">		return $concrete === $abstract || $concrete instanceof Closure;</span><br><span class="line">	&#125;</span><br><span class="line">	//2.3实例*****************************************</span><br><span class="line">	public function build($concrete)&#123;</span><br><span class="line">		if ($concrete instanceof Closure) &#123;</span><br><span class="line">			return $concrete($this);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$reflector = new ReflectionClass($concrete);</span><br><span class="line"></span><br><span class="line">		if (! $reflector-&gt;isInstantiable()) &#123;</span><br><span class="line">			echo $message = &quot;Target [$concrete] is not instantiable.&quot;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$constructor = $reflector-&gt;getConstructor();//获取类的构造函数</span><br><span class="line">		if (is_null($constructor)) &#123;</span><br><span class="line">			return new $concrete;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$dependencies = $constructor-&gt;getParameters();//构造函数中的参数</span><br><span class="line">		$instances = $this-&gt;getDependencies($dependencies);</span><br><span class="line"></span><br><span class="line">		return $reflector-&gt;newInstanceArgs($instances);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//解决构造函数参数中存在依赖，则继续解析依赖</span><br><span class="line">	protected function getDependencies($parameters)</span><br><span class="line">	&#123;</span><br><span class="line">		$dependencies = [];</span><br><span class="line"></span><br><span class="line">		foreach ($parameters as $parameter) &#123;</span><br><span class="line">			$dependency = $parameter-&gt;getClass();</span><br><span class="line"></span><br><span class="line">			if(is_null($dependency)) &#123;</span><br><span class="line">				$dependencies[] = null;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				$dependencies[] = $this-&gt;resolveClass($parameter);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return $dependencies;</span><br><span class="line">	&#125;</span><br><span class="line">	protected function resolveClass(ReflectionParameter $parameter)</span><br><span class="line">	&#123;</span><br><span class="line">		return $this-&gt;make($parameter-&gt;getClass()-&gt;name);//获得类型提示类</span><br><span class="line">	&#125;</span><br><span class="line">	//************************************************************</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$app = new Container();</span><br><span class="line">$app-&gt;bind(&apos;interfaceB&apos;,&apos;B&apos;);</span><br><span class="line">$app-&gt;bind(&apos;aTestObj&apos;,&apos;A&apos;);</span><br><span class="line"></span><br><span class="line">$aTestObj = $app-&gt;make(&apos;aTestObj&apos;);</span><br><span class="line">$aTestObj-&gt;aFun();</span><br></pre></td></tr></table></figure>
+<h2 id="三、超级工厂"><a href="#三、超级工厂" class="headerlink" title="三、超级工厂"></a>三、超级工厂</h2><blockquote>
+<p>工厂模式以及抽象工厂模式大家应该都有了解，为什么说ioc是超级工厂呢。假如上面的例子拓展一下。实例A这时不要依赖B类了，要用C类。</p>
+</blockquote>
+<p>_ 实际的场景如（用烂了的例子），工厂生产汽车。之前用的是德国牌子的TUV轮毂，现在要用日本牌子的轮毂。当然同样都是轮子，因为材料、重量 甚至尺寸以及功能有出入。如果在原用的基础上改甚是麻烦，这时只需重新再写一个类C，而不动A类 _</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class C implements interfaceB</span><br><span class="line">&#123;</span><br><span class="line">    protected $c = &apos;日本&apos;;</span><br><span class="line">	public function someFun()&#123;</span><br><span class="line">		echo $this-&gt;c;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//修改绑定关系</span><br><span class="line">$app = new Container();</span><br><span class="line">$app-&gt;bind(&apos;interfaceB&apos;,&apos;C&apos;);//达到DI控制反转目的</span><br><span class="line">$app-&gt;bind(&apos;aTestObj&apos;,&apos;A&apos;);</span><br><span class="line"></span><br><span class="line">$aTestObj = $app-&gt;make(&apos;aTestObj&apos;);</span><br><span class="line">$aTestObj-&gt;aFun();</span><br></pre></td></tr></table></figure>
+<h2 id="四、容器"><a href="#四、容器" class="headerlink" title="四、容器"></a>四、容器</h2><p>对服务容器进行一个理解：</p>
+<blockquote>
+<p>容器就是一个装东西的，好比碗。而服务就是这个碗要装的饭呀，菜呀，等等东西。当我们需要饭时，我们就能从这个碗里拿到。如果你想在饭里加点菜（也就是饭依赖注入了菜），我们从碗里直接拿饭就可以了，而这些依赖都由容器解决了（这也就是控制反转）。</p>
+</blockquote>
+<p>我们需要做的就是对提供的服务进行维护。</p>
+]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>laravel</tag>
+        <tag>IoC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell监控网卡上下行速度</title>
+    <url>/2018/04/27/net_speed/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root@izhp36yfj8lo876bsm8f2nz ~ # cat net.sh</span><br><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">ethn=$1</span><br><span class="line"></span><br><span class="line">if [ ! -n &quot;$ethn&quot; ]; then</span><br><span class="line">  ethn=&apos;eth0&apos;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">  RX_pre=$(cat /proc/net/dev | grep $ethn | sed &apos;s/:/ /g&apos; | awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line">  TX_pre=$(cat /proc/net/dev | grep $ethn | sed &apos;s/:/ /g&apos; | awk &apos;&#123;print $10&#125;&apos;)</span><br><span class="line">  sleep 1</span><br><span class="line">  RX_next=$(cat /proc/net/dev | grep $ethn | sed &apos;s/:/ /g&apos; | awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line">  TX_next=$(cat /proc/net/dev | grep $ethn | sed &apos;s/:/ /g&apos; | awk &apos;&#123;print $10&#125;&apos;)</span><br><span class="line"></span><br><span class="line">  clear</span><br><span class="line">  echo -e &quot;\t RX `date +%k:%M:%S` TX&quot;</span><br><span class="line"></span><br><span class="line">  RX=$(($&#123;RX_next&#125;-$&#123;RX_pre&#125;))</span><br><span class="line">  TX=$(($&#123;TX_next&#125;-$&#123;TX_pre&#125;))</span><br><span class="line"></span><br><span class="line">  if [[ $RX -lt 1024 ]];then</span><br><span class="line">    RX=&quot;$&#123;RX&#125;B/s&quot;</span><br><span class="line">  elif [[ $RX -gt 1048576 ]];then</span><br><span class="line">    RX=$(echo $RX | awk &apos;&#123;print $1/1048576 &quot;MB/s&quot;&#125;&apos;)</span><br><span class="line">  else</span><br><span class="line">    RX=$(echo $RX | awk &apos;&#123;print $1/1024 &quot;KB/s&quot;&#125;&apos;)</span><br><span class="line">  fi</span><br><span class="line"></span><br><span class="line">  if [[ $TX -lt 1024 ]];then</span><br><span class="line">    TX=&quot;$&#123;TX&#125;B/s&quot;</span><br><span class="line">  elif [[ $TX -gt 1048576 ]];then</span><br><span class="line">    TX=$(echo $TX | awk &apos;&#123;print $1/1048576 &quot;MB/s&quot;&#125;&apos;)</span><br><span class="line">  else</span><br><span class="line">    TX=$(echo $TX | awk &apos;&#123;print $1/1024 &quot;KB/s&quot;&#125;&apos;)</span><br><span class="line">  fi</span><br><span class="line"></span><br><span class="line">  echo -e &quot;$ethn \t $RX   $TX &quot;</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac 关闭sip 保护系统</title>
+    <url>/2018/02/11/mac_sip/</url>
+    <content><![CDATA[<h1 id="最近在mac上操作文件发现提示"><a href="#最近在mac上操作文件发现提示" class="headerlink" title="最近在mac上操作文件发现提示"></a>最近在mac上操作文件发现提示</h1><blockquote>
+<p>chmod: Unable to change file mode on /usr/bin/cc: Operation not permitted</p>
+</blockquote>
+<p>原因是El Capitan（10.11） 加入了Rootless机制，很多系统目录不再能够随心所欲的读写了，即使设置 root 权限也不行。</p>
+<p>以下路径无法写和执行</p>
+<blockquote>
+<p>/System<br>/bin<br>/sbin<br>/usr (except /usr/local)</p>
+</blockquote>
+<p>加入这个机制主要是为了防止恶意程序的入侵，更多我们可以查看官网</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYXBwbGUuY29tL3ZpZGVvcy9wbGF5L3d3ZGMyMDE1LzcwNi8=" title="https://developer.apple.com/videos/play/wwdc2015/706/">链接<i class="fa fa-external-link"></i></span></p>
+<h1 id="如何关闭"><a href="#如何关闭" class="headerlink" title="如何关闭"></a>如何关闭</h1><p>重启按住 Command+R，进入恢复模式，打开Terminal</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">csrutil disable</span><br></pre></td></tr></table></figure>
+<h1 id="如何开启"><a href="#如何开启" class="headerlink" title="如何开启"></a>如何开启</h1><p>重启按住 Command+R，进入恢复模式，打开Terminal。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">csrutil enable</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+</search>
